@@ -1,26 +1,20 @@
 //
-//  LogInViewController.swift
+//  SelectionViewController.swift
 //  AnywhereFitness
 //
-//  Created by admin on 8/26/19.
+//  Created by William Chen on 8/26/19.
 //  Copyright © 2019 bradleyyin. All rights reserved.
 //
 
 import UIKit
 
-class LogInViewController: UIViewController {
-    
-
-    
+class SelectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-    
- 
     
 
     /*
