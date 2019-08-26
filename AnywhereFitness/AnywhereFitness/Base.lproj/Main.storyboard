@@ -50,7 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hub-ZJ-NHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680" y="-575"/>
+            <point key="canvasLocation" x="1665" y="-1039"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="f8c-R0-cfO">
@@ -94,10 +94,20 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2S-Y0-5hj">
+                                <rect key="frame" x="290" y="108" width="104" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="New Trainer"/>
+                                <connections>
+                                    <segue destination="YE1-s5-Pca" kind="presentation" id="93K-OR-ZFH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="GNT-eR-8G9" firstAttribute="top" secondItem="FAr-12-Yob" secondAttribute="bottom" constant="23" id="44O-Mt-48c"/>
+                            <constraint firstItem="ldv-FE-oTC" firstAttribute="trailing" secondItem="B2S-Y0-5hj" secondAttribute="trailing" constant="20" id="Qxn-Hg-aac"/>
+                            <constraint firstItem="B2S-Y0-5hj" firstAttribute="top" secondItem="ldv-FE-oTC" secondAttribute="top" constant="20" id="oBX-J3-LLL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ldv-FE-oTC"/>
                     </view>
@@ -120,6 +130,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAc-XU-rTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3190" y="938"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6IR-NM-Et5">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6YO-6Y-8hC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="YE1-s5-Pca" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rwh-a4-qqF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="uiu-pf-Jqh"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="4558" y="-208"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="GUC-EB-EfD">
@@ -145,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOo-Xf-RvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4513" y="153"/>
+            <point key="canvasLocation" x="4558" y="554"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="T2t-fq-lDm">
@@ -163,7 +188,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VpQ-DX-CFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680" y="-1320"/>
+            <point key="canvasLocation" x="1665" y="-1785"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="M6l-UK-DNE">
@@ -178,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ug6-Uy-Lrq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000" y="198"/>
+            <point key="canvasLocation" x="1151" y="781"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="r7D-5z-siQ">
@@ -222,10 +247,20 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWM-Gy-4tW">
+                                <rect key="frame" x="299" y="108" width="95" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="New Client"/>
+                                <connections>
+                                    <segue destination="Cni-Xb-8Gh" kind="presentation" id="OUg-t0-I7e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tHf-vi-q7v" firstAttribute="top" secondItem="yI6-zk-6YA" secondAttribute="bottom" constant="23" id="D9l-SY-0n6"/>
+                            <constraint firstItem="sWM-Gy-4tW" firstAttribute="top" secondItem="C6B-JG-ENK" secondAttribute="top" constant="20" id="Qrp-aC-jUW"/>
+                            <constraint firstItem="C6B-JG-ENK" firstAttribute="trailing" secondItem="sWM-Gy-4tW" secondAttribute="trailing" constant="20" id="hQc-JL-mlA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C6B-JG-ENK"/>
                     </view>
@@ -233,6 +268,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bzf-dt-SkW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="42" y="198"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="RoG-wu-LY4">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IwB-aZ-uXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Cni-Xb-8Gh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jlV-jL-8F3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="X21-3o-80H"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1225" y="-66"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FCp-Df-Fye">
