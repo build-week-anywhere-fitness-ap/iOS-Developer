@@ -52,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="1665" y="-1039"/>
         </scene>
-        <!--View Controller-->
+        <!--Trainer Login View Controller-->
         <scene sceneID="f8c-R0-cfO">
             <objects>
-                <viewController id="igd-eU-4eQ" sceneMemberID="viewController">
+                <viewController id="igd-eU-4eQ" customClass="TrainerLoginViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zjy-cL-IJU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,10 +116,10 @@
             </objects>
             <point key="canvasLocation" x="3190" y="154"/>
         </scene>
-        <!--View Controller-->
+        <!--Client Forgot Password View Controller-->
         <scene sceneID="r1Q-Wz-5MZ">
             <objects>
-                <viewController id="bxz-Bs-xuv" sceneMemberID="viewController">
+                <viewController id="bxz-Bs-xuv" customClass="ClientForgotPasswordViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VKJ-hl-E8u">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="3190" y="938"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Trainer Course Table View Controller-->
         <scene sceneID="HIy-Dv-mxU">
             <objects>
-                <tableViewController id="acF-E1-Gz2" sceneMemberID="viewController">
+                <tableViewController id="acF-E1-Gz2" customClass="TrainerCourseTableViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zar-nI-sch">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -159,10 +159,10 @@
             </objects>
             <point key="canvasLocation" x="4480" y="627"/>
         </scene>
-        <!--View Controller-->
+        <!--New Trainer View Controller-->
         <scene sceneID="6IR-NM-Et5">
             <objects>
-                <viewController id="YE1-s5-Pca" sceneMemberID="viewController">
+                <viewController id="YE1-s5-Pca" customClass="NewTrainerViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rwh-a4-qqF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,10 +192,10 @@
             </objects>
             <point key="canvasLocation" x="1665" y="-1785"/>
         </scene>
-        <!--View Controller-->
+        <!--Client Login View Controller-->
         <scene sceneID="r7D-5z-siQ">
             <objects>
-                <viewController id="VwJ-qo-aOu" sceneMemberID="viewController">
+                <viewController id="VwJ-qo-aOu" customClass="ClientLoginViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Igy-Wf-Go0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -256,10 +256,10 @@
             </objects>
             <point key="canvasLocation" x="42" y="198"/>
         </scene>
-        <!--View Controller-->
+        <!--New Client View Controller-->
         <scene sceneID="RoG-wu-LY4">
             <objects>
-                <viewController id="Cni-Xb-8Gh" sceneMemberID="viewController">
+                <viewController id="Cni-Xb-8Gh" customClass="NewClientViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jlV-jL-8F3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -271,10 +271,10 @@
             </objects>
             <point key="canvasLocation" x="1225" y="-66"/>
         </scene>
-        <!--View Controller-->
+        <!--Forgot Password View Controller-->
         <scene sceneID="FCp-Df-Fye">
             <objects>
-                <viewController id="q9B-Nf-Ylt" sceneMemberID="viewController">
+                <viewController id="q9B-Nf-Ylt" customClass="ForgotPasswordViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OdN-sy-kug">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -286,10 +286,10 @@
             </objects>
             <point key="canvasLocation" x="41" y="1029"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Course Selection Table View Controller-->
         <scene sceneID="IXh-iP-ze8">
             <objects>
-                <tableViewController id="vS6-aP-xQ5" sceneMemberID="viewController">
+                <tableViewController id="vS6-aP-xQ5" customClass="CourseSelectionTableViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vqK-Ob-e9E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
