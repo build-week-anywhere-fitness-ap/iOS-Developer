@@ -38,6 +38,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjT-Y3-Pf8">
+                                <rect key="frame" x="188" y="556" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0H-Nz-rRR">
+                                <rect key="frame" x="146" y="594" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Forgot Password?"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -47,7 +56,9 @@
                             <constraint firstItem="6Mh-o5-ifp" firstAttribute="leading" secondItem="Zjr-uq-clb" secondAttribute="leading" constant="40" id="QeS-dO-B7m"/>
                             <constraint firstItem="6M7-uz-Orw" firstAttribute="leading" secondItem="Zjr-uq-clb" secondAttribute="leading" constant="40" id="XPX-51-w6T"/>
                             <constraint firstItem="6Mh-o5-ifp" firstAttribute="top" secondItem="6M7-uz-Orw" secondAttribute="bottom" constant="23" id="aJN-A1-DIf"/>
+                            <constraint firstItem="GjT-Y3-Pf8" firstAttribute="centerX" secondItem="r3B-pm-qqx" secondAttribute="centerX" id="dzK-s6-mY0"/>
                             <constraint firstItem="hn3-1p-fLf" firstAttribute="leading" secondItem="Zjr-uq-clb" secondAttribute="leading" constant="60" id="hXc-Mk-iL0"/>
+                            <constraint firstItem="GjT-Y3-Pf8" firstAttribute="top" secondItem="6Mh-o5-ifp" secondAttribute="bottom" constant="40" id="m95-DO-ylq"/>
                             <constraint firstItem="Zjr-uq-clb" firstAttribute="trailing" secondItem="WHE-iU-iES" secondAttribute="trailing" constant="60" id="oui-Jr-Lqm"/>
                             <constraint firstItem="6M7-uz-Orw" firstAttribute="centerY" secondItem="r3B-pm-qqx" secondAttribute="centerY" id="spy-HA-1gk"/>
                             <constraint firstItem="WHE-iU-iES" firstAttribute="top" secondItem="Zjr-uq-clb" secondAttribute="top" constant="60" id="ucI-C8-joc"/>
