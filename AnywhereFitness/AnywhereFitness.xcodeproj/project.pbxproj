@@ -13,6 +13,9 @@
 		75BC6F182314500D00C64D42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75BC6F162314500D00C64D42 /* LaunchScreen.storyboard */; };
 		75BC6F232314522A00C64D42 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BC6F222314522A00C64D42 /* User.swift */; };
 		75BC6F252314523600C64D42 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BC6F242314523600C64D42 /* Course.swift */; };
+		842131552314C96B008F384E /* BuyClassPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842131542314C96B008F384E /* BuyClassPassViewController.swift */; };
+		842131572314C993008F384E /* ClientClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842131562314C993008F384E /* ClientClassDetailViewController.swift */; };
+		842131592314C9EF008F384E /* CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842131582314C9EF008F384E /* CreateCourseViewController.swift */; };
 		9E9505A3231489CD00256BA3 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505A2231489CD00256BA3 /* SelectionViewController.swift */; };
 		9E9505A523148D3200256BA3 /* ClientLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505A423148D3200256BA3 /* ClientLoginViewController.swift */; };
 		9E9505A72314925A00256BA3 /* NewClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505A62314925A00256BA3 /* NewClientViewController.swift */; };
@@ -34,11 +37,14 @@
 		75BC6F192314500D00C64D42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75BC6F222314522A00C64D42 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		75BC6F242314523600C64D42 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
-		9E9505A2231489CD00256BA3 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectionViewController.swift; path = AnywhereFitness/SelectionViewController.swift; sourceTree = SOURCE_ROOT; };
-		9E9505A423148D3200256BA3 /* ClientLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClientLoginViewController.swift; path = AnywhereFitness/ClientLoginViewController.swift; sourceTree = SOURCE_ROOT; };
+		842131542314C96B008F384E /* BuyClassPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyClassPassViewController.swift; sourceTree = "<group>"; };
+		842131562314C993008F384E /* ClientClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientClassDetailViewController.swift; sourceTree = "<group>"; };
+		842131582314C9EF008F384E /* CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCourseViewController.swift; sourceTree = "<group>"; };
+		9E9505A2231489CD00256BA3 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectionViewController.swift; path = AnywhereFitness/ViewController/TrainerViewControllers/SelectionViewController.swift; sourceTree = SOURCE_ROOT; };
+		9E9505A423148D3200256BA3 /* ClientLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClientLoginViewController.swift; path = AnywhereFitness/ViewController/ClientViewControllers/ClientLoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		9E9505A62314925A00256BA3 /* NewClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewClientViewController.swift; sourceTree = "<group>"; };
 		9E9505AA231492ED00256BA3 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
-		9E9505AC2314933600256BA3 /* ClientLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientLoginViewController.swift; sourceTree = "<group>"; };
+		9E9505AC2314933600256BA3 /* ClientLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClientLoginViewController.swift; path = ../ClientLoginViewController.swift; sourceTree = "<group>"; };
 		9E9505B0231493A100256BA3 /* ClientForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		9E9505B2231493E300256BA3 /* CourseSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseSelectionTableViewController.swift; sourceTree = "<group>"; };
 		9E9505B42314967C00256BA3 /* TrainerLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerLoginViewController.swift; sourceTree = "<group>"; };
@@ -100,14 +106,8 @@
 		75BC6F20231451DE00C64D42 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				9E9505A2231489CD00256BA3 /* SelectionViewController.swift */,
-				9E9505A423148D3200256BA3 /* ClientLoginViewController.swift */,
-				9E9505A62314925A00256BA3 /* NewClientViewController.swift */,
-				9E9505AC2314933600256BA3 /* ClientLoginViewController.swift */,
-				9E9505AA231492ED00256BA3 /* ForgotPasswordViewController.swift */,
-				9E9505B0231493A100256BA3 /* ClientForgotPasswordViewController.swift */,
-				9E9505B42314967C00256BA3 /* TrainerLoginViewController.swift */,
-				9E9505B62314975D00256BA3 /* NewTrainerViewController.swift */,
+				8421315A2314CA63008F384E /* TrainerViewControllers */,
+				8421315B2314CA79008F384E /* ClientViewControllers */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -119,6 +119,31 @@
 				9E9505B8231497E800256BA3 /* TrainerCourseTableViewController.swift */,
 			);
 			path = ModelController;
+			sourceTree = "<group>";
+		};
+		8421315A2314CA63008F384E /* TrainerViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9E9505A2231489CD00256BA3 /* SelectionViewController.swift */,
+				9E9505B42314967C00256BA3 /* TrainerLoginViewController.swift */,
+				9E9505B62314975D00256BA3 /* NewTrainerViewController.swift */,
+				842131582314C9EF008F384E /* CreateCourseViewController.swift */,
+				9E9505AA231492ED00256BA3 /* ForgotPasswordViewController.swift */,
+			);
+			path = TrainerViewControllers;
+			sourceTree = "<group>";
+		};
+		8421315B2314CA79008F384E /* ClientViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9E9505A423148D3200256BA3 /* ClientLoginViewController.swift */,
+				9E9505A62314925A00256BA3 /* NewClientViewController.swift */,
+				9E9505AC2314933600256BA3 /* ClientLoginViewController.swift */,
+				842131542314C96B008F384E /* BuyClassPassViewController.swift */,
+				842131562314C993008F384E /* ClientClassDetailViewController.swift */,
+				9E9505B0231493A100256BA3 /* ClientForgotPasswordViewController.swift */,
+			);
+			path = ClientViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,10 +225,13 @@
 				9E9505A72314925A00256BA3 /* NewClientViewController.swift in Sources */,
 				9E9505B9231497E800256BA3 /* TrainerCourseTableViewController.swift in Sources */,
 				75BC6F252314523600C64D42 /* Course.swift in Sources */,
+				842131572314C993008F384E /* ClientClassDetailViewController.swift in Sources */,
 				9E9505A523148D3200256BA3 /* ClientLoginViewController.swift in Sources */,
 				9E9505A3231489CD00256BA3 /* SelectionViewController.swift in Sources */,
+				842131552314C96B008F384E /* BuyClassPassViewController.swift in Sources */,
 				9E9505B1231493A100256BA3 /* ClientForgotPasswordViewController.swift in Sources */,
 				75BC6F0E2314500C00C64D42 /* AppDelegate.swift in Sources */,
+				842131592314C9EF008F384E /* CreateCourseViewController.swift in Sources */,
 				75BC6F232314522A00C64D42 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

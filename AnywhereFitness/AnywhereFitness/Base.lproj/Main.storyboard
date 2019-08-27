@@ -50,7 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hub-ZJ-NHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1665" y="-1039"/>
+            <point key="canvasLocation" x="1672" y="-967"/>
         </scene>
         <!--Trainer Login View Controller-->
         <scene sceneID="f8c-R0-cfO">
@@ -89,7 +89,7 @@
                                         <state key="normal" title="Forgot Password?"/>
                                         <connections>
                                             <action selector="forgotPasswordButton:" destination="wIu-UU-sn0" eventType="touchUpInside" id="JUk-h8-J8o"/>
-                                            <segue destination="bxz-Bs-xuv" kind="presentation" identifier="forgotTrainerPasswordSegue" id="KYn-ae-rjJ"/>
+                                            <segue destination="Sms-mk-ZVa" kind="presentation" id="8Pu-rs-cFx"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -114,22 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yr6-dG-IOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3190" y="154"/>
-        </scene>
-        <!--Client Forgot Password View Controller-->
-        <scene sceneID="r1Q-Wz-5MZ">
-            <objects>
-                <viewController id="bxz-Bs-xuv" customClass="ClientForgotPasswordViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="VKJ-hl-E8u">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="fT6-1w-dTl"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zAc-XU-rTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3190" y="938"/>
+            <point key="canvasLocation" x="3943" y="-144"/>
         </scene>
         <!--Trainer-->
         <scene sceneID="HIy-Dv-mxU">
@@ -166,44 +151,81 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z8b-FQ-o6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4480" y="627"/>
+            <point key="canvasLocation" x="5233" y="329"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Course View Controller-->
         <scene sceneID="XPA-sY-kSl">
             <objects>
-                <viewController id="7mP-4o-a7n" sceneMemberID="viewController">
+                <viewController id="7mP-4o-a7n" customClass="CreateCourseViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xM7-20-WC9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create a New Course" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVJ-sx-XVO">
-                                <rect key="frame" x="93" y="115" width="229" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a New Course" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVJ-sx-XVO">
+                                <rect key="frame" x="20" y="118" width="374" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgC-qS-4wB">
-                                <rect key="frame" x="175" y="709" width="64" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgC-qS-4wB">
+                                <rect key="frame" x="20" y="548" width="374" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Save"/>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tiG-zo-z5H">
-                                <rect key="frame" x="159" y="433" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Mfb-dl-gVf">
+                                <rect key="frame" x="20" y="168" width="374" height="350"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Course Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ulu-sE-LtP">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Catagory" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KaJ-m0-b9S">
+                                        <rect key="frame" x="0.0" y="80" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Trainer Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tiG-zo-z5H">
+                                        <rect key="frame" x="0.0" y="160" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s9J-X0-Egt">
+                                        <rect key="frame" x="0.0" y="240" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FJc-og-xcW">
+                                        <rect key="frame" x="0.0" y="320" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Mfb-dl-gVf" firstAttribute="leading" secondItem="y41-XS-A2L" secondAttribute="leading" constant="20" id="0gm-tp-uT7"/>
+                            <constraint firstItem="y41-XS-A2L" firstAttribute="trailing" secondItem="EVJ-sx-XVO" secondAttribute="trailing" constant="20" id="5ON-O3-fbD"/>
+                            <constraint firstItem="xgC-qS-4wB" firstAttribute="top" secondItem="Mfb-dl-gVf" secondAttribute="bottom" constant="30" id="9hK-Df-6TQ"/>
+                            <constraint firstItem="xgC-qS-4wB" firstAttribute="leading" secondItem="Mfb-dl-gVf" secondAttribute="leading" id="S6M-HY-HIw"/>
+                            <constraint firstItem="y41-XS-A2L" firstAttribute="trailing" secondItem="Mfb-dl-gVf" secondAttribute="trailing" constant="20" id="VmR-Bf-Tff"/>
+                            <constraint firstItem="Mfb-dl-gVf" firstAttribute="top" secondItem="EVJ-sx-XVO" secondAttribute="bottom" constant="20" id="agg-FX-CHt"/>
+                            <constraint firstItem="EVJ-sx-XVO" firstAttribute="top" secondItem="y41-XS-A2L" secondAttribute="top" constant="30" id="eZ1-g2-IEn"/>
+                            <constraint firstItem="EVJ-sx-XVO" firstAttribute="leading" secondItem="y41-XS-A2L" secondAttribute="leading" constant="20" id="qde-S9-NLU"/>
+                            <constraint firstItem="xgC-qS-4wB" firstAttribute="trailing" secondItem="Mfb-dl-gVf" secondAttribute="trailing" id="sxf-Uy-Reh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="y41-XS-A2L"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQM-qL-xBd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5542" y="627"/>
+            <point key="canvasLocation" x="6294" y="329"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="T2t-fq-lDm">
@@ -285,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bzf-dt-SkW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42" y="198"/>
+            <point key="canvasLocation" x="-552" y="102"/>
         </scene>
         <!--New Client View Controller-->
         <scene sceneID="RoG-wu-LY4">
@@ -391,24 +413,50 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IwB-aZ-uXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1225" y="-66"/>
+            <point key="canvasLocation" x="632" y="-79"/>
         </scene>
-        <!--Forgot Password View Controller-->
+        <!--Client Forgot Password View Controller-->
         <scene sceneID="FCp-Df-Fye">
             <objects>
-                <viewController id="q9B-Nf-Ylt" customClass="ForgotPasswordViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="q9B-Nf-Ylt" customClass="ClientForgotPasswordViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OdN-sy-kug">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yI7-dJ-iQS">
+                                <rect key="frame" x="30" y="433" width="354" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Forgot your password? Enter your email address." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVx-Ay-R0l">
+                                <rect key="frame" x="72" y="324" width="271" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bw9-52-VVg">
+                                <rect key="frame" x="184" y="564" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yI7-dJ-iQS" firstAttribute="leading" secondItem="KsB-MD-mVt" secondAttribute="leading" constant="30" id="hpk-Id-M7v"/>
+                            <constraint firstItem="KsB-MD-mVt" firstAttribute="trailing" secondItem="yI7-dJ-iQS" secondAttribute="trailing" constant="30" id="lJE-86-aJp"/>
+                            <constraint firstItem="yI7-dJ-iQS" firstAttribute="centerX" secondItem="OdN-sy-kug" secondAttribute="centerX" id="lRp-v1-vpR"/>
+                            <constraint firstItem="yI7-dJ-iQS" firstAttribute="top" secondItem="zVx-Ay-R0l" secondAttribute="bottom" constant="49" id="lfX-Lm-3Zh"/>
+                            <constraint firstItem="yI7-dJ-iQS" firstAttribute="top" secondItem="zVx-Ay-R0l" secondAttribute="bottom" constant="50" id="xGb-Yj-Q91"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KsB-MD-mVt"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8d-wL-yfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="41" y="1029"/>
+            <point key="canvasLocation" x="-552" y="1017"/>
         </scene>
-        <!--Course Selection Table View Controller-->
+        <!--Title-->
         <scene sceneID="IXh-iP-ze8">
             <objects>
                 <tableViewController id="vS6-aP-xQ5" customClass="CourseSelectionTableViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
@@ -424,6 +472,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="qSX-13-hIQ" kind="showDetail" identifier="clientClassDetailViewSegue" id="tLT-gl-t9t"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -431,15 +482,54 @@
                             <outlet property="delegate" destination="vS6-aP-xQ5" id="hdm-lQ-cuy"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="pkV-Cf-3dG">
+                        <barButtonItem key="rightBarButtonItem" title="Class Pass" id="PiQ-gu-dJF">
+                            <connections>
+                                <segue destination="1O8-JC-XKj" kind="show" identifier="classPassModalSegue" id="edp-Gt-bJm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S60-db-I7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1082" y="774"/>
+            <point key="canvasLocation" x="490" y="761"/>
         </scene>
-        <!--New Client View Controller-->
+        <!--Buy Class Pass View Controller-->
+        <scene sceneID="Kf9-ax-acX">
+            <objects>
+                <viewController id="1O8-JC-XKj" customClass="BuyClassPassViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="El3-mv-1Ts">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have 0 class passes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhF-ws-I1m">
+                                <rect key="frame" x="51" y="271" width="313" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERd-MS-Jnu">
+                                <rect key="frame" x="95" y="424" width="225" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Buy Class Passes"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="4Z9-1o-KFJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cyr-M8-WJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1458" y="472"/>
+        </scene>
+        <!--New Trainer View Controller-->
         <scene sceneID="v2b-bo-Gzs">
             <objects>
-                <viewController id="PHG-T4-zPs" customClass="NewClientViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PHG-T4-zPs" customClass="NewTrainerViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cqI-FH-dzM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -540,7 +630,113 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWt-FA-cGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4480" y="-102"/>
+            <point key="canvasLocation" x="5233" y="-400"/>
+        </scene>
+        <!--Client Class Detail View Controller-->
+        <scene sceneID="dUf-eM-lUS">
+            <objects>
+                <viewController id="qSX-13-hIQ" customClass="ClientClassDetailViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gMT-zw-TBZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="j19-ch-9gh">
+                                <rect key="frame" x="30" y="144" width="354" height="302.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdz-qO-LGS">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsD-XX-bDl">
+                                        <rect key="frame" x="0.0" y="70.5" width="354" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trainer Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhf-f3-lHv">
+                                        <rect key="frame" x="0.0" y="141" width="354" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RB-F8-O3V">
+                                        <rect key="frame" x="0.0" y="211.5" width="354" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ux0-Uh-Vea">
+                                        <rect key="frame" x="0.0" y="282" width="354" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBV-O2-kgq">
+                                <rect key="frame" x="160.5" y="596.5" width="93" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Take Class"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="j19-ch-9gh" firstAttribute="leading" secondItem="zND-3r-pBc" secondAttribute="leading" constant="30" id="B94-Pa-4lV"/>
+                            <constraint firstItem="ZBV-O2-kgq" firstAttribute="top" secondItem="j19-ch-9gh" secondAttribute="bottom" constant="150" id="JYt-B5-Ozm"/>
+                            <constraint firstItem="j19-ch-9gh" firstAttribute="top" secondItem="zND-3r-pBc" secondAttribute="top" constant="100" id="QJb-KB-1XB"/>
+                            <constraint firstItem="ZBV-O2-kgq" firstAttribute="centerX" secondItem="gMT-zw-TBZ" secondAttribute="centerX" id="ij8-Ut-0rC"/>
+                            <constraint firstItem="zND-3r-pBc" firstAttribute="trailing" secondItem="j19-ch-9gh" secondAttribute="trailing" constant="30" id="vb3-it-Jtc"/>
+                            <constraint firstItem="zND-3r-pBc" firstAttribute="trailing" secondItem="j19-ch-9gh" secondAttribute="trailing" constant="30" id="vfe-p5-1FH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zND-3r-pBc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JR4-D2-yfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1458" y="1276"/>
+        </scene>
+        <!--Forgot Password View Controller-->
+        <scene sceneID="u3k-42-OVr">
+            <objects>
+                <viewController id="Sms-mk-ZVa" customClass="ForgotPasswordViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8hd-QL-i5R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X0c-2O-ynP">
+                                <rect key="frame" x="30" y="433" width="354" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Forgot your password? Enter your email address." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDw-O4-EhI">
+                                <rect key="frame" x="72" y="324" width="271" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1t-kg-6FH">
+                                <rect key="frame" x="184" y="564" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="X0c-2O-ynP" firstAttribute="top" secondItem="RDw-O4-EhI" secondAttribute="bottom" constant="49" id="Arb-nF-hq8"/>
+                            <constraint firstItem="X0c-2O-ynP" firstAttribute="centerX" secondItem="8hd-QL-i5R" secondAttribute="centerX" id="UH0-ZB-Whd"/>
+                            <constraint firstItem="X0c-2O-ynP" firstAttribute="top" secondItem="RDw-O4-EhI" secondAttribute="bottom" constant="50" id="mjo-Rg-wXe"/>
+                            <constraint firstItem="EA1-Cf-tZJ" firstAttribute="trailing" secondItem="X0c-2O-ynP" secondAttribute="trailing" constant="30" id="pfT-uR-1Aw"/>
+                            <constraint firstItem="X0c-2O-ynP" firstAttribute="leading" secondItem="EA1-Cf-tZJ" secondAttribute="leading" constant="30" id="q7H-K4-uWs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EA1-Cf-tZJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nPD-ib-s9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3943" y="796"/>
         </scene>
     </scenes>
 </document>
