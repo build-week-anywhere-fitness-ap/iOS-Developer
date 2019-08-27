@@ -12,16 +12,33 @@ class CourseController {
     let baseURL = URL(string: "https://bw-anywhere-fitness.herokuapp.com/")!
     
     init() {
+        
         print("init")
+        //        signUp(firstName: "brad2", lastName: "test2", username: "bradtest5", password: "123456", client: true, instructor: false) { (error) in
+        //            if let error = error {
+        //                print(error)
+        //            }
+        //            print("sign up")
+        //        }
+        login(username: "bradtest5", password: "123456") { (error) in
+            if let error = error {
+                NSLog("Error login:\(error)")
+                return
+            }
+            print("login sucess")
+        }
     }
     
-    func signUp(firstName: String, lastName: String, username: String, password: String, client: Bool, trainer: Bool, completion: @escaping (NetworkError?) -> Void) {
-        let newUser = User(id: nil, firstName: firstName, lastName: lastName, username: username, password: password, client: client, trainer: trainer)
+    func signUp(firstName: String, lastName: String, username: String, password: String, client: Int, instructor: Int, completion: @escaping (NetworkError?) -> Void) {
+        let newUser = User(id: nil, firstName: firstName, lastName: lastName, username: username, password: password, client: client, instructor: instructor, token: nil)
         
         let signUpURL = baseURL.appendingPathComponent("api/register")
         var request = URLRequest(url: signUpURL)
         request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
         do {
+            print(newUser)
             let userData = try JSONEncoder().encode(newUser)
             request.httpBody = userData
         } catch {
@@ -37,29 +54,40 @@ class CourseController {
                 return
             }
             guard let data = data else {
-                NSLog("no data return on registration")
                 completion(.noData)
                 return
             }
             do {
-                let userIdDict = try JSONDecoder().decode([String : Int].self, from: data)
-                let userId = userIdDict.map({$0.value}).first ?? 0
-                print(userId)
+                let userIdDict = try JSONDecoder().decode([Int].self, from: data)
+                if userIdDict.first != nil {
+                    completion(nil)
+                } else {
+                    completion(.noData)
+                    return
+                }
+                
             } catch {
-                NSLog("Error decoding when registering: \(error)")
+                NSLog("Error decoding when login: \(error)")
                 completion(.noDecode)
                 return
             }
-            completion(nil)
-        }.resume()
+            
+            
+            
+            
+            }.resume()
     }
     func login (username: String, password: String, completion: @escaping (NetworkError?)-> Void) {
-        let loginInfo = ["username": username, "password": password]
+        //let loginInfo = ["username": username, "password": password]
+        let loginInfo = UserLogin(username: username, password: password)
         let loginURL = baseURL.appendingPathComponent("api/login")
         var request = URLRequest(url: loginURL)
         request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         do {
             let loginData = try JSONEncoder().encode(loginInfo)
+            let loginDict = try JSONDecoder().decode(UserLogin.self, from: loginData)
+            print(loginDict)
             request.httpBody = loginData
         } catch {
             NSLog("Error encoding user when login: \(error)")
@@ -80,14 +108,24 @@ class CourseController {
             }
             do {
                 let user = try JSONDecoder().decode(User.self, from: data)
-                print(user)
+                if let token = user.token, let userId = user.id {
+                    UserDefaults.standard.set(token, forKey: "token")
+                    UserDefaults.standard.set(userId, forKey: "userId")
+                    print(user)
+                    completion(nil)
+                } else {
+                    completion(.noToken)
+                }
             } catch {
                 NSLog("Error decoding when login: \(error)")
                 completion(.noDecode)
                 return
             }
-            completion(nil)
-            }.resume()
+        }.resume()
+    }
+    
+    func updateUser(firstName: String) {
+        
     }
 }
 enum HTTPMethod: String{
