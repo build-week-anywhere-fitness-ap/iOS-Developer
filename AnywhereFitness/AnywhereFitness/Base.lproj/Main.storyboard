@@ -47,6 +47,9 @@
                         <viewLayoutGuide key="safeArea" id="Zjr-uq-clb"/>
                     </view>
                     <navigationItem key="navigationItem" id="BX3-9W-VCC"/>
+                    <connections>
+                        <outlet property="clientButton" destination="daP-W8-zgH" id="Zbs-rk-mGH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hub-ZJ-NHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -280,6 +283,7 @@
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="logInButton:" destination="wIu-UU-sn0" eventType="touchUpInside" id="tld-JO-UJS"/>
+                                            <action selector="loginButton:" destination="VwJ-qo-aOu" eventType="touchUpInside" id="QrR-0I-hfN"/>
                                             <segue destination="vS6-aP-xQ5" kind="show" identifier="courseChoiceSegue" id="tcv-SN-4Fi"/>
                                         </connections>
                                     </button>
@@ -310,6 +314,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C6B-JG-ENK"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="yI6-zk-6YA" id="bmf-p2-d2o"/>
+                        <outlet property="passwordTextField" destination="tHf-vi-q7v" id="Njg-px-Sdv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bzf-dt-SkW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -395,11 +403,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="43" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveButton:" destination="Cni-Xb-8Gh" eventType="touchUpInside" id="ipQ-Qa-Ri3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66P-ck-8xP">
                                         <rect key="frame" x="143" y="0.0" width="61" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="Cni-Xb-8Gh" eventType="touchUpInside" id="mQ4-Mw-dDb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -416,6 +430,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X21-3o-80H"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="WEd-ee-ecb" id="kPV-pZ-9id"/>
+                        <outlet property="firstNameText" destination="pSf-BD-cNy" id="125-ht-Wra"/>
+                        <outlet property="lastNameText" destination="09u-vA-0Km" id="Yiq-ee-BlZ"/>
+                        <outlet property="passwordTextField" destination="v3P-7q-Joj" id="Lms-Cg-ArN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IwB-aZ-uXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -530,7 +550,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cyr-M8-WJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1458" y="472"/>
+            <point key="canvasLocation" x="1399" y="1280"/>
         </scene>
         <!--New Trainer View Controller-->
         <scene sceneID="v2b-bo-Gzs">
@@ -701,7 +721,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JR4-D2-yfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1458" y="1276"/>
+            <point key="canvasLocation" x="1399" y="436"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="u3k-42-OVr">
