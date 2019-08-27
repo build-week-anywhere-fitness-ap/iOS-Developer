@@ -60,21 +60,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FAr-12-Yob">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FAr-12-Yob">
                                 <rect key="frame" x="40" y="484" width="334" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNT-eR-8G9">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNT-eR-8G9">
                                 <rect key="frame" x="40" y="537" width="334" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nEd-7R-g5o">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nEd-7R-g5o">
                                 <rect key="frame" x="125" y="607" width="123" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyU-pS-GLu">
                                         <rect key="frame" x="42.5" y="0.0" width="38" height="30"/>
@@ -106,8 +105,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="GNT-eR-8G9" firstAttribute="top" secondItem="FAr-12-Yob" secondAttribute="bottom" constant="23" id="44O-Mt-48c"/>
+                            <constraint firstItem="nEd-7R-g5o" firstAttribute="leading" secondItem="ldv-FE-oTC" secondAttribute="leading" constant="125" id="F7u-ve-hDk"/>
                             <constraint firstItem="ldv-FE-oTC" firstAttribute="trailing" secondItem="B2S-Y0-5hj" secondAttribute="trailing" constant="20" id="Qxn-Hg-aac"/>
+                            <constraint firstItem="GNT-eR-8G9" firstAttribute="leading" secondItem="ldv-FE-oTC" secondAttribute="leading" constant="40" id="WgS-Ql-Os9"/>
+                            <constraint firstItem="nEd-7R-g5o" firstAttribute="top" secondItem="GNT-eR-8G9" secondAttribute="bottom" constant="40" id="cz7-r7-C0F"/>
+                            <constraint firstItem="ldv-FE-oTC" firstAttribute="trailing" secondItem="GNT-eR-8G9" secondAttribute="trailing" constant="40" id="fRf-QN-qcn"/>
+                            <constraint firstItem="FAr-12-Yob" firstAttribute="leading" secondItem="ldv-FE-oTC" secondAttribute="leading" constant="40" id="kUC-rs-Xu6"/>
+                            <constraint firstItem="ldv-FE-oTC" firstAttribute="trailing" secondItem="FAr-12-Yob" secondAttribute="trailing" constant="40" id="nhM-je-Cmo"/>
                             <constraint firstItem="B2S-Y0-5hj" firstAttribute="top" secondItem="ldv-FE-oTC" secondAttribute="top" constant="20" id="oBX-J3-LLL"/>
+                            <constraint firstAttribute="bottom" secondItem="GNT-eR-8G9" secondAttribute="bottom" constant="329" id="sFK-eC-FQE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ldv-FE-oTC"/>
                     </view>
