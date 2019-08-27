@@ -180,6 +180,9 @@
                                 <rect key="frame" x="20" y="548" width="374" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="7mP-4o-a7n" eventType="touchUpInside" id="poS-HY-EkG"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Mfb-dl-gVf">
                                 <rect key="frame" x="20" y="168" width="374" height="350"/>
@@ -542,6 +545,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Buy Class Passes"/>
+                                <connections>
+                                    <action selector="buyClassPass:" destination="1O8-JC-XKj" eventType="touchUpInside" id="OvM-qU-98j"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -550,7 +556,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cyr-M8-WJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1399" y="1280"/>
+            <point key="canvasLocation" x="1454" y="388"/>
         </scene>
         <!--New Trainer View Controller-->
         <scene sceneID="v2b-bo-Gzs">
@@ -632,11 +638,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="43" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveButton:" destination="PHG-T4-zPs" eventType="touchUpInside" id="EiU-ea-aEj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8I-v4-qBm">
                                         <rect key="frame" x="143" y="0.0" width="61" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="PHG-T4-zPs" eventType="touchUpInside" id="dEL-5O-SJr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -705,6 +717,9 @@
                                 <rect key="frame" x="160.5" y="596.5" width="93" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Take Class"/>
+                                <connections>
+                                    <action selector="takeClass:" destination="qSX-13-hIQ" eventType="touchUpInside" id="QCz-zQ-zDS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -721,7 +736,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JR4-D2-yfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1399" y="436"/>
+            <point key="canvasLocation" x="1454" y="1140"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="u3k-42-OVr">
@@ -731,29 +746,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X0c-2O-ynP">
-                                <rect key="frame" x="30" y="433" width="354" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X0c-2O-ynP">
+                                <rect key="frame" x="30" y="434" width="354" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Forgot your password? Enter your email address." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDw-O4-EhI">
-                                <rect key="frame" x="72" y="324" width="271" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot your password? Enter your email address." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDw-O4-EhI">
+                                <rect key="frame" x="72" y="324" width="270" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1t-kg-6FH">
-                                <rect key="frame" x="184" y="564" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1t-kg-6FH">
+                                <rect key="frame" x="183" y="564" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="Submit:" destination="Sms-mk-ZVa" eventType="touchUpInside" id="XCB-og-BcZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="X0c-2O-ynP" firstAttribute="top" secondItem="RDw-O4-EhI" secondAttribute="bottom" constant="49" id="Arb-nF-hq8"/>
+                            <constraint firstItem="RDw-O4-EhI" firstAttribute="top" secondItem="EA1-Cf-tZJ" secondAttribute="top" constant="280" id="L7M-s3-kl4"/>
+                            <constraint firstItem="EA1-Cf-tZJ" firstAttribute="bottom" secondItem="g1t-kg-6FH" secondAttribute="bottom" constant="268" id="ORH-QK-3Zc"/>
                             <constraint firstItem="X0c-2O-ynP" firstAttribute="centerX" secondItem="8hd-QL-i5R" secondAttribute="centerX" id="UH0-ZB-Whd"/>
+                            <constraint firstItem="RDw-O4-EhI" firstAttribute="leading" secondItem="EA1-Cf-tZJ" secondAttribute="leading" constant="72" id="b46-dX-7i6"/>
+                            <constraint firstItem="g1t-kg-6FH" firstAttribute="leading" secondItem="EA1-Cf-tZJ" secondAttribute="leading" constant="183" id="eG5-8y-iQn"/>
+                            <constraint firstItem="RDw-O4-EhI" firstAttribute="centerX" secondItem="X0c-2O-ynP" secondAttribute="centerX" id="g4C-N4-PdV"/>
                             <constraint firstItem="X0c-2O-ynP" firstAttribute="top" secondItem="RDw-O4-EhI" secondAttribute="bottom" constant="50" id="mjo-Rg-wXe"/>
+                            <constraint firstItem="RDw-O4-EhI" firstAttribute="centerX" secondItem="g1t-kg-6FH" secondAttribute="centerX" id="nF8-4E-vkc"/>
                             <constraint firstItem="EA1-Cf-tZJ" firstAttribute="trailing" secondItem="X0c-2O-ynP" secondAttribute="trailing" constant="30" id="pfT-uR-1Aw"/>
                             <constraint firstItem="X0c-2O-ynP" firstAttribute="leading" secondItem="EA1-Cf-tZJ" secondAttribute="leading" constant="30" id="q7H-K4-uWs"/>
                         </constraints>

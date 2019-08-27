@@ -16,7 +16,11 @@ class NewTrainerViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func saveButton(_ sender: UIButton) {
+    }
+    
+    @IBAction func cancelButton(_ sender: UIButton) {
+    }
     /*
     // MARK: - Navigation
 

@@ -16,7 +16,9 @@ class ForgotPasswordViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func Submit(_ sender: UIButton) {
+    }
+    
     /*
     // MARK: - Navigation
 

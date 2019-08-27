@@ -17,6 +17,8 @@ class CreateCourseViewController: UIViewController {
     }
     
 
+    @IBAction func saveButton(_ sender: UIButton) {
+    }
     /*
     // MARK: - Navigation
 
