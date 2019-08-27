@@ -47,9 +47,6 @@
                         <viewLayoutGuide key="safeArea" id="Zjr-uq-clb"/>
                     </view>
                     <navigationItem key="navigationItem" id="BX3-9W-VCC"/>
-                    <connections>
-                        <outlet property="clientButton" destination="daP-W8-zgH" id="Zbs-rk-mGH"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hub-ZJ-NHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,7 +87,6 @@
                                         <rect key="frame" x="0.0" y="38" width="123" height="30"/>
                                         <state key="normal" title="Forgot Password?"/>
                                         <connections>
-                                            <action selector="forgotPasswordButton:" destination="wIu-UU-sn0" eventType="touchUpInside" id="JUk-h8-J8o"/>
                                             <segue destination="Sms-mk-ZVa" kind="presentation" id="8Pu-rs-cFx"/>
                                         </connections>
                                     </button>
@@ -296,7 +292,6 @@
                                         <rect key="frame" x="42.5" y="0.0" width="38" height="30"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
-                                            <action selector="logInButton:" destination="wIu-UU-sn0" eventType="touchUpInside" id="tld-JO-UJS"/>
                                             <action selector="loginButton:" destination="VwJ-qo-aOu" eventType="touchUpInside" id="QrR-0I-hfN"/>
                                             <segue destination="vS6-aP-xQ5" kind="show" identifier="courseChoiceSegue" id="tcv-SN-4Fi"/>
                                         </connections>
@@ -305,7 +300,6 @@
                                         <rect key="frame" x="0.0" y="38" width="123" height="30"/>
                                         <state key="normal" title="Forgot Password?"/>
                                         <connections>
-                                            <action selector="forgotPasswordButton:" destination="wIu-UU-sn0" eventType="touchUpInside" id="jte-dc-aEA"/>
                                             <segue destination="q9B-Nf-Ylt" kind="presentation" identifier="forgotClienPasswordSegue" id="jLw-b5-cjl"/>
                                         </connections>
                                     </button>

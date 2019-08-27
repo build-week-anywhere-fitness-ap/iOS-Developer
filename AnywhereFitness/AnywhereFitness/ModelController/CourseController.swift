@@ -11,8 +11,12 @@ import Foundation
 class CourseController {
     let baseURL = URL(string: "https://bw-anywhere-fitness.herokuapp.com/")!
     
+    init() {
+        print("init")
+    }
+    
     func signUp(firstName: String, lastName: String, username: String, password: String, client: Bool, trainer: Bool, completion: @escaping (NetworkError?) -> Void) {
-        let newUser = User(firstName: firstName, lastName: lastName, username: username, password: password, client: client, trainer: trainer)
+        let newUser = User(id: nil, firstName: firstName, lastName: lastName, username: username, password: password, client: client, trainer: trainer)
         
         let signUpURL = baseURL.appendingPathComponent("api/register")
         var request = URLRequest(url: signUpURL)

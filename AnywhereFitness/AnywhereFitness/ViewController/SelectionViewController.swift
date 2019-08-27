@@ -8,11 +8,15 @@
 
 import UIKit
 
+var courseController: CourseController?
+
 class SelectionViewController: UIViewController {
  
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        courseController = CourseController()
 
     }
     

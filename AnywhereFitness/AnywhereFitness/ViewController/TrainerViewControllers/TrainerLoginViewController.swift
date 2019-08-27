@@ -10,7 +10,6 @@ import UIKit
 
 class TrainerLoginViewController: UITableViewController {
 
-    var userController = UserController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
