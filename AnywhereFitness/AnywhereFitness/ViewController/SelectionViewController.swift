@@ -4,7 +4,7 @@
 //
 //  Created by William Chen on 8/26/19.
 //  Copyright © 2019 bradleyyin. All rights reserved.
-//
+//Users/williamchen/Desktop/iOS-Developer/AnywhereFitness/AnywhereFitness/ViewController/
 
 import UIKit
 
@@ -14,7 +14,6 @@ class SelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
 

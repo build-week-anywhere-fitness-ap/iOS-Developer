@@ -9,7 +9,9 @@
 import UIKit
 
 class TrainerCourseTableViewController: UITableViewController {
-
+ 
+    var userController = UserController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,25 +24,24 @@ class TrainerCourseTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return userController.trainers.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TrainerCell", for: indexPath) as? TrainerTableViewCell else {return UITableViewCell()}
+        let trainer = userController.trainers[indexPath.row]
+        cell.
 
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
