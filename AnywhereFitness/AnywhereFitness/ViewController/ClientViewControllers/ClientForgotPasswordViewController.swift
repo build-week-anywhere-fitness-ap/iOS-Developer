@@ -19,7 +19,15 @@ class ClientForgotPasswordViewController: UIViewController {
     }
     
     @IBAction func clientFogotPasswordSubmit(_ sender: UIButton) {
-        
+        if clientForgotEmailTextfield.text != nil {
+            showCFPAlert()
+        } else { return }
+    }
+    
+    private func showCFPAlert() {
+        let alert = UIAlertController(title: "Password reset sent", message: "We have sent a password reset code to the email provided.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
     
 
