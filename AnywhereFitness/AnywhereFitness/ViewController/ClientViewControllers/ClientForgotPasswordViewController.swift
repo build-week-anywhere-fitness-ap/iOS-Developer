@@ -9,11 +9,17 @@
 import UIKit
 
 class ClientForgotPasswordViewController: UIViewController {
+    
+    @IBOutlet weak var clientForgotEmailTextfield: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func clientFogotPasswordSubmit(_ sender: UIButton) {
+        
     }
     
 

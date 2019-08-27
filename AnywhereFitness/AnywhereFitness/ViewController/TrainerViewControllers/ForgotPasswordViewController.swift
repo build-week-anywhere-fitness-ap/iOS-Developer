@@ -9,6 +9,8 @@
 import UIKit
 
 class ForgotPasswordViewController: UIViewController {
+    
+    @IBOutlet weak var trainerForgotEmailTextfield: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +19,7 @@ class ForgotPasswordViewController: UIViewController {
     }
     
     @IBAction func Submit(_ sender: UIButton) {
+        
     }
     
     /*
