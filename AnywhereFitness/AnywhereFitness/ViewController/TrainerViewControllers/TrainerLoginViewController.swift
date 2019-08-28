@@ -8,10 +8,18 @@
 
 import UIKit
 
-class TrainerLoginViewController: UITableViewController {
-    @IBOutlet weak var trainerloginButton: UIButton!
-    
+var courseController: CourseController?
 
+class TrainerLoginViewController: UITableViewController {
+    
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
+    
+    @IBOutlet weak var trainerloginButton: UIButton!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
@@ -19,6 +27,8 @@ class TrainerLoginViewController: UITableViewController {
         trainerloginButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
         trainerloginButton.layer.cornerRadius = 5
         trainerloginButton.layer.borderWidth = 1
+        
+        courseController = CourseController()
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -35,6 +45,10 @@ class TrainerLoginViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
+    
+    @IBAction func newUserButton(_ sender: UIButton) {
+    }
+    
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -81,14 +95,17 @@ class TrainerLoginViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if courseController?.currentUser?.client == nil {
+            segue.identifier == "trainerShowSegue"
+        } else {
+            segue.identifier == "clientShowSegue"
+        }
     }
-    */
+    
 
 }

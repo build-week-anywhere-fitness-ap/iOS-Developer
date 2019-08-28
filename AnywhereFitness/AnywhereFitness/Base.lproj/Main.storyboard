@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FAr-12-Yob">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FAr-12-Yob">
                                 <rect key="frame" x="40" y="484" width="334" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -53,10 +53,11 @@
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2S-Y0-5hj">
-                                <rect key="frame" x="290" y="108" width="104" height="36"/>
+                                <rect key="frame" x="308" y="108" width="86" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="New Trainer"/>
+                                <state key="normal" title="New User"/>
                                 <connections>
+                                    <action selector="newUserButton:" destination="igd-eU-4eQ" eventType="touchUpInside" id="Voc-zW-K3k"/>
                                     <segue destination="PHG-T4-zPs" kind="presentation" identifier="AddNewTrainerModalSegue" id="Wtn-Gm-d7q"/>
                                 </connections>
                             </button>
@@ -78,7 +79,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="3Tn-Sb-Cau"/>
                     <connections>
+                        <outlet property="passwordTextField" destination="GNT-eR-8G9" id="cZp-Vl-K5x"/>
                         <outlet property="trainerloginButton" destination="LyU-pS-GLu" id="gG8-LE-s92"/>
+                        <outlet property="userNameTextField" destination="FAr-12-Yob" id="am7-Tn-i7h"/>
                         <segue destination="vS6-aP-xQ5" kind="show" identifier="clientLoginShowSegue" id="ABb-mU-1h9"/>
                     </connections>
                 </viewController>
@@ -332,8 +335,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6B-6Z-lHQ">
-                                        <rect key="frame" x="0.0" y="149" width="108" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6B-6Z-lHQ" userLabel="User Name">
+                                        <rect key="frame" x="0.0" y="149" width="85.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -364,14 +367,20 @@
                                     <constraint firstAttribute="trailing" secondItem="pbO-RC-a5O" secondAttribute="trailing" id="zeb-HZ-NoB"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome New Client Please fill out the form below" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyJ-TS-lrg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome New User Please fill out the form below" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyJ-TS-lrg">
                                 <rect key="frame" x="29.5" y="94" width="355" height="69.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you a Client or a Trainer?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSo-dd-8c6">
+                                <rect key="frame" x="97" y="607" width="220" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="5q6-Bm-aSr">
-                                <rect key="frame" x="105" y="671" width="204" height="36"/>
+                                <rect key="frame" x="105" y="806" width="204" height="36"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kR-qT-SmJ">
                                         <rect key="frame" x="0.0" y="0.0" width="43" height="36"/>
@@ -394,16 +403,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5q6-Bm-aSr" firstAttribute="top" secondItem="djh-Dy-fth" secondAttribute="bottom" constant="80" id="66I-Gn-QXX"/>
                             <constraint firstItem="djh-Dy-fth" firstAttribute="centerY" secondItem="cqI-FH-dzM" secondAttribute="centerY" id="N5u-ds-w5H"/>
                             <constraint firstItem="jEt-fW-iL2" firstAttribute="trailing" secondItem="djh-Dy-fth" secondAttribute="trailing" constant="20" id="QsC-vC-AH5"/>
-                            <constraint firstItem="5q6-Bm-aSr" firstAttribute="centerX" secondItem="cqI-FH-dzM" secondAttribute="centerX" id="RDz-cm-XbK"/>
                             <constraint firstItem="dyJ-TS-lrg" firstAttribute="centerX" secondItem="cqI-FH-dzM" secondAttribute="centerX" id="YTu-05-SYE"/>
+                            <constraint firstItem="jEt-fW-iL2" firstAttribute="trailing" secondItem="5q6-Bm-aSr" secondAttribute="trailing" constant="105" id="dW1-MC-UTJ"/>
                             <constraint firstItem="dyJ-TS-lrg" firstAttribute="top" secondItem="jEt-fW-iL2" secondAttribute="top" constant="50" id="fp8-7u-EEu"/>
+                            <constraint firstItem="NSo-dd-8c6" firstAttribute="top" secondItem="djh-Dy-fth" secondAttribute="bottom" constant="16" id="g5D-Zh-hBm"/>
                             <constraint firstItem="djh-Dy-fth" firstAttribute="leading" secondItem="jEt-fW-iL2" secondAttribute="leading" constant="20" id="gXN-bA-B2w"/>
+                            <constraint firstItem="jEt-fW-iL2" firstAttribute="bottom" secondItem="5q6-Bm-aSr" secondAttribute="bottom" constant="20" id="hnT-h6-DnL"/>
+                            <constraint firstItem="5q6-Bm-aSr" firstAttribute="leading" secondItem="jEt-fW-iL2" secondAttribute="leading" constant="105" id="s04-2a-Ct4"/>
+                            <constraint firstItem="NSo-dd-8c6" firstAttribute="centerX" secondItem="cqI-FH-dzM" secondAttribute="centerX" id="yAa-KF-BTw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jEt-fW-iL2"/>
                     </view>
+                    <connections>
+                        <outlet property="firstNameTextField" destination="ksf-cw-Zpt" id="LcS-5X-Z8H"/>
+                        <outlet property="lastNameTextField" destination="pbO-RC-a5O" id="M9D-VE-H1o"/>
+                        <outlet property="passwordTextField" destination="mEO-FT-q5R" id="Ecq-j9-jy2"/>
+                        <outlet property="userNameTextField" destination="m27-L3-qGa" id="DBW-xE-buk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWt-FA-cGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

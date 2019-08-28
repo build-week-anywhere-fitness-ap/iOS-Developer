@@ -9,6 +9,15 @@
 import UIKit
 
 class NewTrainerViewController: UIViewController {
+    
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var cOrTTextField: UITextField!
+    
+    var courseController = CourseController()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,9 +26,27 @@ class NewTrainerViewController: UIViewController {
     }
     
     @IBAction func saveButton(_ sender: UIButton) {
+        createUser()
     }
     
     @IBAction func cancelButton(_ sender: UIButton) {
+    }
+    
+    func createUser() {
+        guard let firstName = firstNameTextField.text,
+            let lastName = lastNameTextField.text,
+            let userName = userNameTextField.text,
+            let password = passwordTextField.text,
+            
+            !firstName.isEmpty,
+            !userName.isEmpty,
+            !password.isEmpty  else { return }
+        
+        courseController.currentUser?.firstName = firstName
+        courseController.currentUser?.lastName = lastName
+        courseController.currentUser?.username = userName
+        courseController.currentUser?.password = password
+        
     }
     /*
     // MARK: - Navigation
