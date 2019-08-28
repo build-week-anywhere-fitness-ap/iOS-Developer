@@ -9,9 +9,7 @@
 import UIKit
 
 class TrainerCourseTableViewController: UITableViewController {
- 
-  
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,20 +26,18 @@ class TrainerCourseTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0    }
-}
+        return 0
+    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TrainerCell", for: indexPath) as? TrainerTableViewCell else {return UITableViewCell()}
-        let trainer = userController.trainers[indexPath.row]
-        cell.
 
         // Configure the cell...
 
         return cell
     }
-    
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -59,7 +55,7 @@ class TrainerCourseTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 

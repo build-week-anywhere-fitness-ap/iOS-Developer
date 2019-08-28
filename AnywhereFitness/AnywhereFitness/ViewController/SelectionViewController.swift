@@ -8,12 +8,17 @@
 
 import UIKit
 
+var courseController: CourseController?
+
 class SelectionViewController: UIViewController {
- 
-    
+
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        courseController = CourseController()
+
     }
     
     @IBAction func clientButtonTapped(_ sender: UIButton) {
@@ -23,6 +28,7 @@ class SelectionViewController: UIViewController {
     }
     
     
+
 
     /*
     // MARK: - Navigation
