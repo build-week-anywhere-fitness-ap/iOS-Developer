@@ -20,6 +20,14 @@ class SelectionViewController: UIViewController {
         courseController = CourseController()
 
     }
+    
+    @IBAction func clientButtonTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func trainerButtonTapped(_ sender: UIButton) {
+    }
+    
+    
 
 
     /*
