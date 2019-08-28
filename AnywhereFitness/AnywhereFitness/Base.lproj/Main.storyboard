@@ -295,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cyr-M8-WJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1454" y="388"/>
+            <point key="canvasLocation" x="1890" y="-362"/>
         </scene>
         <!--New Trainer View Controller-->
         <scene sceneID="v2b-bo-Gzs">
@@ -475,7 +475,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JR4-D2-yfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1454" y="1140"/>
+            <point key="canvasLocation" x="851" y="453"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="u3k-42-OVr">
@@ -526,7 +526,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nPD-ib-s9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3943" y="796"/>
+            <point key="canvasLocation" x="2590" y="0.0"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QbD-5l-3nD">
