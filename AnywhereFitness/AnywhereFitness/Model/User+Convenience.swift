@@ -21,10 +21,10 @@ extension User {
         self.instructor = instructor
     }
     
-//    @discardableResult convenience init?(userRepresentation: UserRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-//        guard let title = entryRepresentation.title, let bodyText = entryRepresentation.bodyText, let timeStamp = entryRepresentation.timeStamp, let identifier = entryRepresentation.identifier, let mood = entryRepresentation.mood else { return nil }
-//        self.init(title: title, bodyText: bodyText, timeStamp: timeStamp, identifier: identifier, mood: mood, context: context)
-//    }
+    @discardableResult convenience init?(userRepresentation: UserRepresentation, username: String, password: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        guard let id = userRepresentation.id, let firstName = userRepresentation.firstName, let lastName = userRepresentation.lastName, let client = userRepresentation.client, let instructor = userRepresentation.instructor, let token = userRepresentation.token else { return nil }
+        self.init(id: id, firstName: firstName, lastName: lastName, username: username, password: password, client: client, instructor: instructor, token: token, context: context)
+    }
     
     var userRepresentation: UserRepresentation {
         return UserRepresentation(id: id, firstName: firstName, lastName: lastName, username: username, password: password, client: client, instructor: instructor, token: token)

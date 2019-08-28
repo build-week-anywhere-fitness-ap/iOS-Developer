@@ -18,3 +18,4 @@ struct UserRepresentation: Codable {
     let instructor: Int64?
     let token: String?
 }
+

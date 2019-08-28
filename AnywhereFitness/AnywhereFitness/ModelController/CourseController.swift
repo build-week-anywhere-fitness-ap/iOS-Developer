@@ -14,30 +14,30 @@ class CourseController {
     init() {
         
         print("init")
-//                signUp(firstName: "brad", lastName: "test", username: "bradtest", password: "123456", client: 1, instructor: 0) { (error) in
-//                    if let error = error {
-//                        print(error)
-//                    }
-//                    print("sign up")
-//                }
-//        login(username: "bradtest", password: "123456") { (error) in
+//        signUp(firstName: "brad", lastName: "test", username: "bradtestinstructor", password: "123456", client: 0, instructor: 1) { (error) in
 //            if let error = error {
-//                NSLog("Error login:\(error)")
-//                return
+//                print(error)
 //            }
-//            print("login sucess")
+//            print("sign up")
 //        }
-        updateUser(firstName: "brad", lastName: "test123", password: "123456") { (error) in
+        login(username: "bradtest", password: "123456") { (error) in
             if let error = error {
                 NSLog("Error login:\(error)")
                 return
             }
-            print("update sucess")
+            print("login sucess")
         }
+//        updateUser(firstName: "brad", lastName: "test123", password: "123456") { (error) in
+//            if let error = error {
+//                NSLog("Error login:\(error)")
+//                return
+//            }
+//            print("update sucess")
+//        }
     }
     
-    func signUp(firstName: String, lastName: String, username: String, password: String, client: Int, instructor: Int, completion: @escaping (NetworkError?) -> Void) {
-        let newUser = User(id: nil, firstName: firstName, lastName: lastName, username: username, password: password, client: client, instructor: instructor, token: nil)
+    func signUp(firstName: String, lastName: String, username: String, password: String, client: Int64, instructor: Int64, completion: @escaping (NetworkError?) -> Void) {
+        let newUser = UserRepresentation(id: nil, firstName: firstName, lastName: lastName, username: username, password: password, client: client, instructor: instructor, token: nil)
         
         let signUpURL = baseURL.appendingPathComponent("api/register")
         var request = URLRequest(url: signUpURL)
@@ -89,8 +89,6 @@ class CourseController {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         do {
             let loginData = try JSONEncoder().encode(loginInfo)
-//            let loginDict = try JSONDecoder().decode(UserLogin.self, from: loginData)
-//            print(loginDict)
             request.httpBody = loginData
         } catch {
             NSLog("Error encoding user when login: \(error)")
@@ -110,16 +108,19 @@ class CourseController {
                 return
             }
             do {
-                let user = try JSONDecoder().decode(User.self, from: data)
-                if let token = user.token, let userId = user.id {
-                    print(token)
-                    UserDefaults.standard.set(token, forKey: "token")
-                    UserDefaults.standard.set(userId, forKey: "userId")
-                    print(user)
-                    completion(nil)
-                } else {
-                    completion(.noToken)
+                let userRep = try JSONDecoder().decode(UserRepresentation.self, from: data)
+                
+                let moc = CoreDataStack.shared.container.newBackgroundContext()
+                moc.performAndWait {
+                    User(userRepresentation: userRep, username: username, password: password)
+                    do {
+                        try CoreDataStack.shared.save()
+                    } catch {
+                        NSLog("Error saving to persistent")
+                    }
                 }
+                completion(nil)
+                
             } catch {
                 NSLog("Error decoding when login: \(error)")
                 completion(.noDecode)
