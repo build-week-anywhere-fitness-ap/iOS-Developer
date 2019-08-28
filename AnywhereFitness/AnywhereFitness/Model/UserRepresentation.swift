@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct User: Codable {
-    let id: Int?
+struct UserRepresentation: Codable {
+    let id: Int64?
     let firstName: String?
     let lastName: String?
     let username: String?
     let password: String?
-    let client: Int?
-    let instructor: Int?
+    let client: Int64?
+    let instructor: Int64?
     let token: String?
 }
