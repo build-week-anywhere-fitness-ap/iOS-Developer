@@ -17,7 +17,7 @@
 		75BC6F252314523600C64D42 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BC6F242314523600C64D42 /* Course.swift */; };
 		75C509A42315D5A5001C0D5B /* CourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C509A32315D5A5001C0D5B /* CourseController.swift */; };
 		75C509A62315E75C001C0D5B /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C509A52315E75C001C0D5B /* UserLogin.swift */; };
-		75C509A82315F418001C0D5B /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C509A72315F418001C0D5B /* UserRepresentation.swift */; };
+		75C509A82315F418001C0D5B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C509A72315F418001C0D5B /* User.swift */; };
 		842131552314C96B008F384E /* BuyClassPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842131542314C96B008F384E /* BuyClassPassViewController.swift */; };
 		842131572314C993008F384E /* ClientClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842131562314C993008F384E /* ClientClassDetailViewController.swift */; };
 		842131592314C9EF008F384E /* CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842131582314C9EF008F384E /* CreateCourseViewController.swift */; };
@@ -46,7 +46,7 @@
 		75BC6F242314523600C64D42 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		75C509A32315D5A5001C0D5B /* CourseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseController.swift; sourceTree = "<group>"; };
 		75C509A52315E75C001C0D5B /* UserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
-		75C509A72315F418001C0D5B /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
+		75C509A72315F418001C0D5B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		842131542314C96B008F384E /* BuyClassPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyClassPassViewController.swift; sourceTree = "<group>"; };
 		842131562314C993008F384E /* ClientClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientClassDetailViewController.swift; sourceTree = "<group>"; };
 		842131582314C9EF008F384E /* CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCourseViewController.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 				75B18BA72316EA9500CC28EC /* AnywhereFitnessModel.xcdatamodeld */,
 				75BC6F242314523600C64D42 /* Course.swift */,
 				75C509A52315E75C001C0D5B /* UserLogin.swift */,
-				75C509A72315F418001C0D5B /* UserRepresentation.swift */,
+				75C509A72315F418001C0D5B /* User.swift */,
 				75B18BAA2316EAF000CC28EC /* CoreDataStacks.swift */,
 				75B18BAC2316EB6B00CC28EC /* User+Convenience.swift */,
 			);
@@ -251,7 +251,7 @@
 				9E9505B1231493A100256BA3 /* ClientForgotPasswordViewController.swift in Sources */,
 				75BC6F0E2314500C00C64D42 /* AppDelegate.swift in Sources */,
 				842131592314C9EF008F384E /* CreateCourseViewController.swift in Sources */,
-				75C509A82315F418001C0D5B /* UserRepresentation.swift in Sources */,
+				75C509A82315F418001C0D5B /* User.swift in Sources */,
 				75B18BAD2316EB6B00CC28EC /* User+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct UserRepresentation: Codable {
-    let id: Int64?
-    let firstName: String?
-    let lastName: String?
+struct User: Codable {
+    let id: Int?
+    var firstName: String?
+    var lastName: String?
     let username: String?
-    let password: String?
-    let client: Int64?
-    let instructor: Int64?
+    var password: String?
+    let client: Int?
+    let instructor: Int?
     let token: String?
 }
 

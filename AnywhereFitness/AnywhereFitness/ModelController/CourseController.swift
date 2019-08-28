@@ -11,6 +11,15 @@ import Foundation
 class CourseController {
     let baseURL = URL(string: "https://bw-anywhere-fitness.herokuapp.com/")!
     
+    var userLocalURL: URL?{
+        let fm = FileManager.default
+        guard let dir = fm.urls(for: .documentDirectory, in: .userDomainMask).first else {return nil}
+        print(dir.path)
+        return dir.appendingPathComponent("User.plist")
+    }
+    
+    var currentUser: User?
+    
     init() {
         
         print("init")
@@ -20,7 +29,7 @@ class CourseController {
 //            }
 //            print("sign up")
 //        }
-        login(username: "bradtest", password: "123456") { (error) in
+        login(username: "bradtestinstructor", password: "123456") { (error) in
             if let error = error {
                 NSLog("Error login:\(error)")
                 return
@@ -36,8 +45,8 @@ class CourseController {
 //        }
     }
     
-    func signUp(firstName: String, lastName: String, username: String, password: String, client: Int64, instructor: Int64, completion: @escaping (NetworkError?) -> Void) {
-        let newUser = UserRepresentation(id: nil, firstName: firstName, lastName: lastName, username: username, password: password, client: client, instructor: instructor, token: nil)
+    func signUp(firstName: String, lastName: String, username: String, password: String, client: Int, instructor: Int, completion: @escaping (NetworkError?) -> Void) {
+        let newUser = User(id: nil, firstName: firstName, lastName: lastName, username: username, password: password, client: client, instructor: instructor, token: nil)
         
         let signUpURL = baseURL.appendingPathComponent("api/register")
         var request = URLRequest(url: signUpURL)
@@ -108,17 +117,10 @@ class CourseController {
                 return
             }
             do {
-                let userRep = try JSONDecoder().decode(UserRepresentation.self, from: data)
-                
-                let moc = CoreDataStack.shared.container.newBackgroundContext()
-                moc.performAndWait {
-                    User(userRepresentation: userRep, username: username, password: password)
-                    do {
-                        try CoreDataStack.shared.save()
-                    } catch {
-                        NSLog("Error saving to persistent")
-                    }
-                }
+                let user = try JSONDecoder().decode(User.self, from: data)
+                self.currentUser = user
+                self.saveLocalUser()
+               
                 completion(nil)
                 
             } catch {
@@ -129,13 +131,30 @@ class CourseController {
         }.resume()
     }
     
+    func saveLocalUser() {
+        guard let url = self.userLocalURL else{ return }
+        
+        do{
+            let data = try PropertyListEncoder().encode(currentUser)
+            try data.write(to: url)
+        }catch{
+            print("Error saving data: \(error)")
+        }
+    }
+    
     func updateUser(firstName: String, lastName: String, password: String, completion: @escaping (NetworkError?) -> Void) {
-        let userId = UserDefaults.standard.integer(forKey: "userId")
-        guard let token = UserDefaults.standard.string(forKey: "token") else {
+        guard currentUser != nil, let userId = currentUser?.id else { return }
+        guard let token = currentUser?.token else {
             completion(.noToken)
             return
         }
         print(token)
+        
+        // local update
+        currentUser?.firstName = firstName
+        currentUser?.lastName = lastName
+        currentUser?.password = password
+        
         let updateJson = ["firstName": firstName, "lastName": lastName, "password": password]
         
         let updateURL = baseURL.appendingPathComponent("api/users/\(userId)")
