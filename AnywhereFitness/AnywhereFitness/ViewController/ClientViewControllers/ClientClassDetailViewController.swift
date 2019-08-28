@@ -16,6 +16,8 @@ class ClientClassDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+
+    
     @IBAction func takeClass(_ sender: UIButton) {
     }
     

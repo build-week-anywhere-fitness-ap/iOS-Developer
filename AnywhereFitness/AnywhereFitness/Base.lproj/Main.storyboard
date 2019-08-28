@@ -77,7 +77,9 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyU-pS-GLu">
                                         <rect key="frame" x="42.5" y="0.0" width="38" height="30"/>
-                                        <state key="normal" title="Login"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="logInButton:" destination="wIu-UU-sn0" eventType="touchUpInside" id="PUJ-NH-pgK"/>
                                             <segue destination="acF-E1-Gz2" kind="show" identifier="courseMakingSegue" id="43d-c9-zSE"/>
@@ -87,10 +89,11 @@
                                         <rect key="frame" x="0.0" y="38" width="123" height="30"/>
                                         <state key="normal" title="Forgot Password?"/>
                                         <connections>
-                                            <segue destination="Sms-mk-ZVa" kind="presentation" id="8Pu-rs-cFx"/>
+                                            <segue destination="Sms-mk-ZVa" kind="presentation" identifier="forgotPasswordSegue" id="8Pu-rs-cFx"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2S-Y0-5hj">
                                 <rect key="frame" x="290" y="108" width="104" height="36"/>
@@ -116,6 +119,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ldv-FE-oTC"/>
                     </view>
+                    <connections>
+                        <outlet property="trainerloginButton" destination="LyU-pS-GLu" id="gG8-LE-s92"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yr6-dG-IOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -160,7 +166,7 @@
                     <navigationItem key="navigationItem" title="Trainer" id="q0F-eI-gnv">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3Rm-mT-dsF">
                             <connections>
-                                <segue destination="7mP-4o-a7n" kind="show" id="pZD-Ci-cp7"/>
+                                <segue destination="7mP-4o-a7n" kind="show" identifier="createCourseSegue" id="pZD-Ci-cp7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -292,7 +298,6 @@
                                         <rect key="frame" x="42.5" y="0.0" width="38" height="30"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
-                                            <action selector="loginButton:" destination="VwJ-qo-aOu" eventType="touchUpInside" id="QrR-0I-hfN"/>
                                             <segue destination="vS6-aP-xQ5" kind="show" identifier="courseChoiceSegue" id="tcv-SN-4Fi"/>
                                         </connections>
                                     </button>
@@ -477,8 +482,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bw9-52-VVg">
-                                <rect key="frame" x="184" y="564" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="182.5" y="564" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="clientFogotPasswordSubmit:" destination="q9B-Nf-Ylt" eventType="touchUpInside" id="jmW-hl-d3y"/>
                                 </connections>
@@ -751,7 +756,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Take Class"/>
                                 <connections>
-                                    <action selector="takeClass:" destination="qSX-13-hIQ" eventType="touchUpInside" id="QCz-zQ-zDS"/>
+                                    <action selector="takeClass:" destination="qSX-13-hIQ" eventType="touchUpInside" id="6Zf-gI-0fg"/>
                                 </connections>
                             </button>
                         </subviews>

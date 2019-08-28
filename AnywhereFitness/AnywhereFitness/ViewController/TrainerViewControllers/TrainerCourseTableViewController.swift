@@ -84,3 +84,4 @@ class TrainerCourseTableViewController: UITableViewController {
     }
 
  /**/*/*/*/
+}

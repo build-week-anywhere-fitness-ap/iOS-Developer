@@ -9,11 +9,18 @@
 import UIKit
 
 class TrainerLoginViewController: UITableViewController {
-
+    @IBOutlet weak var trainerloginButton: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        trainerloginButton.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        trainerloginButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+        trainerloginButton.layer.cornerRadius = 5
+        trainerloginButton.layer.borderWidth = 1
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
