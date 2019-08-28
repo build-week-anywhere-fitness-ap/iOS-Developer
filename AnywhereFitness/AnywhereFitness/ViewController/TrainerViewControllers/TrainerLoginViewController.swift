@@ -10,8 +10,7 @@ import UIKit
 
 class TrainerLoginViewController: UITableViewController {
 
-  
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +23,7 @@ class TrainerLoginViewController: UITableViewController {
 
     // MARK: - Table view data source
 
- 
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
@@ -56,7 +55,7 @@ class TrainerLoginViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
