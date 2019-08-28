@@ -8,10 +8,12 @@
 
 import UIKit
 
-class TrainerTableViewCell: UITableViewCell {
-
+class TrainerCourseTableViewCell: UITableViewCell {
+    @IBOutlet weak var trainerCourseLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 

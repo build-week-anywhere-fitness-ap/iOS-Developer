@@ -138,7 +138,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lCR-nX-Bom" customClass="TrainerTableViewCell" customModule="AnywhereFitness" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lCR-nX-Bom" customClass="TrainerCourseTableViewCell" customModule="AnywhereFitness" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lCR-nX-Bom" id="a5e-D3-vOb">
@@ -157,6 +157,9 @@
                                         <constraint firstItem="u6S-Jn-7s8" firstAttribute="leading" secondItem="a5e-D3-vOb" secondAttribute="leadingMargin" id="ejX-3c-9rZ"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="trainerCourseLabel" destination="u6S-Jn-7s8" id="hkN-cV-2ag"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -522,7 +525,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrainerCell" id="p85-ME-9qy">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrainerCell" id="p85-ME-9qy" customClass="ClientTableViewCell" customModule="AnywhereFitness" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p85-ME-9qy" id="gtu-ah-O9e">
@@ -542,6 +545,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="clientCourseLabel" destination="ZOP-18-4Vo" id="UVt-Fv-XVa"/>
                                     <segue destination="qSX-13-hIQ" kind="showDetail" identifier="clientClassDetailViewSegue" id="tLT-gl-t9t"/>
                                 </connections>
                             </tableViewCell>
