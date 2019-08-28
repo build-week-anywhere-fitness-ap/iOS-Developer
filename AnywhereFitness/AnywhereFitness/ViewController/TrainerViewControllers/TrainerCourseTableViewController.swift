@@ -10,7 +10,7 @@ import UIKit
 
 class TrainerCourseTableViewController: UITableViewController {
  
-    var userController = UserController()
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +28,8 @@ class TrainerCourseTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return userController.trainers.count
-    }
+        return 0    }
+}
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -76,7 +76,7 @@ class TrainerCourseTableViewController: UITableViewController {
         // Return false if you do not want the item to be re-orderable.
         return true
     }
-    */
+
 
     /*
     // MARK: - Navigation
@@ -86,6 +86,5 @@ class TrainerCourseTableViewController: UITableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
 
-}
+ /**/*/*/*/

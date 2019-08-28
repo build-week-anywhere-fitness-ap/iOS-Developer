@@ -47,9 +47,6 @@
                         <viewLayoutGuide key="safeArea" id="Zjr-uq-clb"/>
                     </view>
                     <navigationItem key="navigationItem" id="BX3-9W-VCC"/>
-                    <connections>
-                        <outlet property="clientButton" destination="daP-W8-zgH" id="Zbs-rk-mGH"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hub-ZJ-NHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
