@@ -21,7 +21,7 @@ class CourseController {
     
     var currentUser: User?
     
-    
+    //var courses: [Course] = []
     
     //for testing
     let userName = "bradTestInstructor"
@@ -242,6 +242,36 @@ extension CourseController {
 }
 extension CourseController {
     //MARK:- network stuffs
+    
+//    func fetchCoursesFromServer(completion: @escaping () -> Void) {
+//        let requestURL = baseURL.appendingPathComponent("api/classes")
+//        
+//        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
+//            if let error = error {
+//                NSLog("Error fetching courses from server: \(error)")
+//                return
+//            }
+//            guard let data = data else {
+//                NSLog("No data returned from data task")
+//                completion()
+//                return
+//            }
+//            do {
+//                let decoder = JSONDecoder()
+//                let taskRepDictionary = try decoder.decode([String: TaskRepresentation].self, from: data)
+//                
+//                //turn dict into array
+//                let taskRepresentations = taskRepDictionary.map({$0.value})
+//                
+//                // loop through the task representations
+//                let moc = CoreDataStack.shared.container.newBackgroundContext()
+//                self.updatePersistentStore(with: taskRepresentations, context: moc)
+//            }catch {
+//                NSLog("Error decoding: \(error)")
+//            }
+//            completion()
+//            }.resume()
+//    }
     
     func put(course: Course, completion: @escaping () -> Void = {}) {
         guard let token = currentUser?.token else { return }
