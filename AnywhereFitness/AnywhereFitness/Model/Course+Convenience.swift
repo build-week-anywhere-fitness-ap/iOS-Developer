@@ -27,7 +27,7 @@ extension Course {
     }
     
     var courseRepresentation: CourseRepresentation {
-        return CourseRepresentation(name: name, location: location, type: type, instructorId: instructorId, dateTime: dateTime)
+        return CourseRepresentation(id: id, name: name, location: location, type: type, instructorId: instructorId, dateTime: dateTime)
     }
     
 }

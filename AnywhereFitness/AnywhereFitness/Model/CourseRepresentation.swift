@@ -15,7 +15,9 @@ struct CourseRepresentation: Codable {
         case instructorId = "instructor_id"
         case type
         case dateTime
+        case id
     }
+    var id: Int64?
     var name: String?
     var location: String?
     var type: String?
