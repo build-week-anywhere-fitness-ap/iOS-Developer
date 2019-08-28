@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75B18BA92316EA9500CC28EC /* AnywhereFitnessModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75B18BA72316EA9500CC28EC /* AnywhereFitnessModel.xcdatamodeld */; };
+		75B18BAB2316EAF000CC28EC /* CoreDataStacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B18BAA2316EAF000CC28EC /* CoreDataStacks.swift */; };
+		75B18BAD2316EB6B00CC28EC /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B18BAC2316EB6B00CC28EC /* User+Convenience.swift */; };
 		75BC6F0E2314500C00C64D42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BC6F0D2314500C00C64D42 /* AppDelegate.swift */; };
 		75BC6F132314500C00C64D42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75BC6F112314500C00C64D42 /* Main.storyboard */; };
 		75BC6F152314500D00C64D42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75BC6F142314500D00C64D42 /* Assets.xcassets */; };
@@ -14,11 +17,10 @@
 		75BC6F252314523600C64D42 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BC6F242314523600C64D42 /* Course.swift */; };
 		75C509A42315D5A5001C0D5B /* CourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C509A32315D5A5001C0D5B /* CourseController.swift */; };
 		75C509A62315E75C001C0D5B /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C509A52315E75C001C0D5B /* UserLogin.swift */; };
-		75C509A82315F418001C0D5B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C509A72315F418001C0D5B /* User.swift */; };
+		75C509A82315F418001C0D5B /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C509A72315F418001C0D5B /* UserRepresentation.swift */; };
 		842131552314C96B008F384E /* BuyClassPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842131542314C96B008F384E /* BuyClassPassViewController.swift */; };
 		842131572314C993008F384E /* ClientClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842131562314C993008F384E /* ClientClassDetailViewController.swift */; };
 		842131592314C9EF008F384E /* CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842131582314C9EF008F384E /* CreateCourseViewController.swift */; };
-		9E65BCF12316F0BE00F04711 /* ClientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E65BCF02316F0BE00F04711 /* ClientTableViewCell.swift */; };
 		9E9505A3231489CD00256BA3 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505A2231489CD00256BA3 /* SelectionViewController.swift */; };
 		9E9505A523148D3200256BA3 /* ClientLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505A423148D3200256BA3 /* ClientLoginViewController.swift */; };
 		9E9505A72314925A00256BA3 /* NewClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505A62314925A00256BA3 /* NewClientViewController.swift */; };
@@ -28,10 +30,13 @@
 		9E9505B52314967C00256BA3 /* TrainerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505B42314967C00256BA3 /* TrainerLoginViewController.swift */; };
 		9E9505B72314975D00256BA3 /* NewTrainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505B62314975D00256BA3 /* NewTrainerViewController.swift */; };
 		9E9505B9231497E800256BA3 /* TrainerCourseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505B8231497E800256BA3 /* TrainerCourseTableViewController.swift */; };
-		9E9505BF2315CFB300256BA3 /* TrainerCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505BE2315CFB300256BA3 /* TrainerCourseTableViewCell.swift */; };
+		9E9505BF2315CFB300256BA3 /* TrainerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505BE2315CFB300256BA3 /* TrainerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75B18BA82316EA9500CC28EC /* AnywhereFitnessModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AnywhereFitnessModel.xcdatamodel; sourceTree = "<group>"; };
+		75B18BAA2316EAF000CC28EC /* CoreDataStacks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStacks.swift; sourceTree = "<group>"; };
+		75B18BAC2316EB6B00CC28EC /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
 		75BC6F0A2314500C00C64D42 /* AnywhereFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnywhereFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BC6F0D2314500C00C64D42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75BC6F122314500C00C64D42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,11 +46,10 @@
 		75BC6F242314523600C64D42 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		75C509A32315D5A5001C0D5B /* CourseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseController.swift; sourceTree = "<group>"; };
 		75C509A52315E75C001C0D5B /* UserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
-		75C509A72315F418001C0D5B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		75C509A72315F418001C0D5B /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
 		842131542314C96B008F384E /* BuyClassPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyClassPassViewController.swift; sourceTree = "<group>"; };
 		842131562314C993008F384E /* ClientClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientClassDetailViewController.swift; sourceTree = "<group>"; };
 		842131582314C9EF008F384E /* CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCourseViewController.swift; sourceTree = "<group>"; };
-		9E65BCF02316F0BE00F04711 /* ClientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTableViewCell.swift; sourceTree = "<group>"; };
 		9E9505A2231489CD00256BA3 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectionViewController.swift; path = AnywhereFitness/ViewController/SelectionViewController.swift; sourceTree = SOURCE_ROOT; };
 		9E9505A423148D3200256BA3 /* ClientLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClientLoginViewController.swift; path = AnywhereFitness/ViewController/ClientViewControllers/ClientLoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		9E9505A62314925A00256BA3 /* NewClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewClientViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +59,7 @@
 		9E9505B42314967C00256BA3 /* TrainerLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerLoginViewController.swift; sourceTree = "<group>"; };
 		9E9505B62314975D00256BA3 /* NewTrainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrainerViewController.swift; sourceTree = "<group>"; };
 		9E9505B8231497E800256BA3 /* TrainerCourseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerCourseTableViewController.swift; sourceTree = "<group>"; };
-		9E9505BE2315CFB300256BA3 /* TrainerCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerCourseTableViewCell.swift; sourceTree = "<group>"; };
+		9E9505BE2315CFB300256BA3 /* TrainerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +107,12 @@
 		75BC6F1F231451D400C64D42 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				75B18BA72316EA9500CC28EC /* AnywhereFitnessModel.xcdatamodeld */,
 				75BC6F242314523600C64D42 /* Course.swift */,
 				75C509A52315E75C001C0D5B /* UserLogin.swift */,
-				75C509A72315F418001C0D5B /* User.swift */,
+				75C509A72315F418001C0D5B /* UserRepresentation.swift */,
+				75B18BAA2316EAF000CC28EC /* CoreDataStacks.swift */,
+				75B18BAC2316EB6B00CC28EC /* User+Convenience.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -134,7 +141,7 @@
 				9E9505B42314967C00256BA3 /* TrainerLoginViewController.swift */,
 				9E9505B62314975D00256BA3 /* NewTrainerViewController.swift */,
 				9E9505B8231497E800256BA3 /* TrainerCourseTableViewController.swift */,
-				9E9505BE2315CFB300256BA3 /* TrainerCourseTableViewCell.swift */,
+				9E9505BE2315CFB300256BA3 /* TrainerTableViewCell.swift */,
 				842131582314C9EF008F384E /* CreateCourseViewController.swift */,
 				9E9505AA231492ED00256BA3 /* ForgotPasswordViewController.swift */,
 			);
@@ -146,7 +153,6 @@
 			children = (
 				9E9505A423148D3200256BA3 /* ClientLoginViewController.swift */,
 				9E9505A62314925A00256BA3 /* NewClientViewController.swift */,
-				9E65BCF02316F0BE00F04711 /* ClientTableViewCell.swift */,
 				9E9505B2231493E300256BA3 /* CourseSelectionTableViewController.swift */,
 				842131542314C96B008F384E /* BuyClassPassViewController.swift */,
 				842131562314C993008F384E /* ClientClassDetailViewController.swift */,
@@ -230,12 +236,13 @@
 				9E9505B3231493E300256BA3 /* CourseSelectionTableViewController.swift in Sources */,
 				75C509A62315E75C001C0D5B /* UserLogin.swift in Sources */,
 				9E9505B72314975D00256BA3 /* NewTrainerViewController.swift in Sources */,
-				9E9505BF2315CFB300256BA3 /* TrainerCourseTableViewCell.swift in Sources */,
+				9E9505BF2315CFB300256BA3 /* TrainerTableViewCell.swift in Sources */,
 				9E9505B52314967C00256BA3 /* TrainerLoginViewController.swift in Sources */,
 				9E9505A72314925A00256BA3 /* NewClientViewController.swift in Sources */,
-				9E65BCF12316F0BE00F04711 /* ClientTableViewCell.swift in Sources */,
+				75B18BAB2316EAF000CC28EC /* CoreDataStacks.swift in Sources */,
 				9E9505B9231497E800256BA3 /* TrainerCourseTableViewController.swift in Sources */,
 				75BC6F252314523600C64D42 /* Course.swift in Sources */,
+				75B18BA92316EA9500CC28EC /* AnywhereFitnessModel.xcdatamodeld in Sources */,
 				842131572314C993008F384E /* ClientClassDetailViewController.swift in Sources */,
 				75C509A42315D5A5001C0D5B /* CourseController.swift in Sources */,
 				9E9505A523148D3200256BA3 /* ClientLoginViewController.swift in Sources */,
@@ -244,7 +251,8 @@
 				9E9505B1231493A100256BA3 /* ClientForgotPasswordViewController.swift in Sources */,
 				75BC6F0E2314500C00C64D42 /* AppDelegate.swift in Sources */,
 				842131592314C9EF008F384E /* CreateCourseViewController.swift in Sources */,
-				75C509A82315F418001C0D5B /* User.swift in Sources */,
+				75C509A82315F418001C0D5B /* UserRepresentation.swift in Sources */,
+				75B18BAD2316EB6B00CC28EC /* User+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +452,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		75B18BA72316EA9500CC28EC /* AnywhereFitnessModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				75B18BA82316EA9500CC28EC /* AnywhereFitnessModel.xcdatamodel */,
+			);
+			currentVersion = 75B18BA82316EA9500CC28EC /* AnywhereFitnessModel.xcdatamodel */;
+			path = AnywhereFitnessModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 75BC6F022314500C00C64D42 /* Project object */;
 }
