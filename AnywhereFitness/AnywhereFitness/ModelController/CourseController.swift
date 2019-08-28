@@ -206,10 +206,42 @@ class CourseController {
 extension CourseController {
     
     func createCourse(with name: String, location: String, dateTime: Date, type: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-        guard let instructorID = currentUser?.id else { return }
+        guard let instructorId = currentUser?.id else { return }
         context.performAndWait {
-            let course = 
+            let course = Course(name: name, type: type, location: location, instructorId: Int64(instructorId), dateTime: dateTime)
+            
+            do{
+                try CoreDataStack.shared.save(context: context)
+            } catch {
+                NSLog("Error saving context when creating new task: \(error)")
+            }
+            
+            put(course: course)
         }
+    }
+    
+    func put(course: Course, completion: @escaping () -> Void = {}) {
+        let requestURL = baseURL.appendingPathComponent("api/classes")
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.post.rawValue
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+        do {
+            let courseData = try encoder.encode(course.courseRepresentation)
+            request.httpBody = courseData
+            
+        } catch {
+            NSLog("Error encoding course representation: \(error)")
+            completion()
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { (_, _, error) in
+            if let error = error {
+                NSLog("Error PUTing course representation to server: \(error)")
+            }
+            completion()
+        }.resume()
     }
 }
 enum HTTPMethod: String{
