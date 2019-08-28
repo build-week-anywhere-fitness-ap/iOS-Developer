@@ -485,6 +485,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bw9-52-VVg">
                                 <rect key="frame" x="184" y="564" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="clientFogotPasswordSubmit:" destination="q9B-Nf-Ylt" eventType="touchUpInside" id="jmW-hl-d3y"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -501,6 +504,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KsB-MD-mVt"/>
                     </view>
+                    <connections>
+                        <outlet property="clientForgotEmailTextfield" destination="yI7-dJ-iQS" id="shD-Jg-aSR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8d-wL-yfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -814,6 +820,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EA1-Cf-tZJ"/>
                     </view>
+                    <connections>
+                        <outlet property="trainerForgotEmailTextfield" destination="X0c-2O-ynP" id="IO7-WX-VK8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nPD-ib-s9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
