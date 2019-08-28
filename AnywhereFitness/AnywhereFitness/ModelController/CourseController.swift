@@ -71,11 +71,7 @@ class CourseController {
                 completion(.noDecode)
                 return
             }
-            
-            
-            
-            
-            }.resume()
+        }.resume()
     }
     func login (username: String, password: String, completion: @escaping (NetworkError?)-> Void) {
         //let loginInfo = ["username": username, "password": password]
@@ -86,8 +82,8 @@ class CourseController {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         do {
             let loginData = try JSONEncoder().encode(loginInfo)
-            let loginDict = try JSONDecoder().decode(UserLogin.self, from: loginData)
-            print(loginDict)
+//            let loginDict = try JSONDecoder().decode(UserLogin.self, from: loginData)
+//            print(loginDict)
             request.httpBody = loginData
         } catch {
             NSLog("Error encoding user when login: \(error)")
@@ -124,8 +120,51 @@ class CourseController {
         }.resume()
     }
     
-    func updateUser(firstName: String) {
+    func updateUser(firstName: String, lastName: String, username: String, password: String, completion: @escaping (NetworkError?) -> Void) {
+        let userId = UserDefaults.standard.integer(forKey: "userId")
+        let token = UserDefaults.standard.string(forKey: "token")
+        let newUser = User(id: userId, firstName: firstName, lastName: lastName, username: username, password: password, client: nil, instructor: nil, token: token)
         
+        let signUpURL = baseURL.appendingPathComponent("api/register")
+        var request = URLRequest(url: signUpURL)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            print(newUser)
+            let userData = try JSONEncoder().encode(newUser)
+            request.httpBody = userData
+        } catch {
+            NSLog("Error encoding user when registering: \(error)")
+            completion(.noEncode)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                NSLog("Error posting url request when register: \(error)")
+                completion(.badRequest)
+                return
+            }
+            guard let data = data else {
+                completion(.noData)
+                return
+            }
+            do {
+                let userIdDict = try JSONDecoder().decode([Int].self, from: data)
+                if userIdDict.first != nil {
+                    completion(nil)
+                } else {
+                    completion(.noData)
+                    return
+                }
+                
+            } catch {
+                NSLog("Error decoding when login: \(error)")
+                completion(.noDecode)
+                return
+            }
+            }.resume()
     }
 }
 enum HTTPMethod: String{

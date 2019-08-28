@@ -13,7 +13,7 @@ struct User: Codable {
     let lastName: String
     let username: String?
     let password: String?
-    let client: Int
-    let instructor: Int
+    let client: Int?
+    let instructor: Int?
     let token: String?
 }
