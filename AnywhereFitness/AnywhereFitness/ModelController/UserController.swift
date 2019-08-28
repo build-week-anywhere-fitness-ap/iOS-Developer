@@ -7,9 +7,3 @@
 //
 
 import Foundation
-
-class UserController{
-    var trainers: [User] = []
-    var clients: [User] = []
-    
-}

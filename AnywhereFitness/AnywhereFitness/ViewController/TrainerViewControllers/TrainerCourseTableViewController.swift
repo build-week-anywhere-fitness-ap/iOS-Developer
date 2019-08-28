@@ -31,7 +31,7 @@ class TrainerCourseTableViewController: UITableViewController {
         return userController.trainers.count
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TrainerCell", for: indexPath) as? TrainerTableViewCell else {return UITableViewCell()}
         let trainer = userController.trainers[indexPath.row]
