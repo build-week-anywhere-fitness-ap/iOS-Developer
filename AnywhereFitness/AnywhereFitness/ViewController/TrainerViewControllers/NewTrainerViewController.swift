@@ -19,6 +19,8 @@ class NewTrainerViewController: UIViewController {
     
     var courseController = CourseController()
     
+    var clientNum: Int
+    var trainerNum: Int
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +33,15 @@ class NewTrainerViewController: UIViewController {
     @IBAction func clientButton(_ sender: UIButton) {
         clientButtonOutlet.isSelected = true
         trainerButtonOutlet.isSelected = false
+        clientNum = 1
+        trainerNum = 0
         
     }
     @IBAction func trainerButton(_ sender: Any) {
         trainerButtonOutlet.isSelected = true
         clientButtonOutlet.isSelected = false
-        
-        
+        trainerNum = 1
+        clientNum = 0
     }
     
     
@@ -49,21 +53,18 @@ class NewTrainerViewController: UIViewController {
     }
     
     func createUser() {
+        
         guard let firstName = firstNameTextField.text,
             let lastName = lastNameTextField.text,
             let userName = userNameTextField.text,
             let password = passwordTextField.text,
+
             
             !firstName.isEmpty,
             !userName.isEmpty,
             !password.isEmpty  else { return }
-        
-        courseController.currentUser?.firstName = firstName
-        courseController.currentUser?.lastName = lastName
-        courseController.currentUser?.username = userName
-        courseController.currentUser?.password = password
-        
-        
+
+        courseController.signUp(firstName: firstName, lastName: lastName, username: userName, password: password, client: clientNum, instructor: trainerNum, completion: <#T##(NetworkError?) -> Void#>)
     }
     /*
     // MARK: - Navigation
