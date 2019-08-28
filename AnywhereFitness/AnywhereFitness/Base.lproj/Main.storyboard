@@ -23,6 +23,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="60"/>
                                 <state key="normal" title="Client"/>
                                 <connections>
+                                    <action selector="clientButtonTapped:" destination="wIu-UU-sn0" eventType="touchUpInside" id="Lg4-WP-Dpq"/>
                                     <segue destination="VwJ-qo-aOu" kind="show" identifier="clienLoginSegue" id="hSS-FA-IAB"/>
                                 </connections>
                             </button>
@@ -31,6 +32,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="60"/>
                                 <state key="normal" title="Trainer"/>
                                 <connections>
+                                    <action selector="trainerButtonTapped:" destination="wIu-UU-sn0" eventType="touchUpInside" id="uip-Ye-D49"/>
                                     <segue destination="igd-eU-4eQ" kind="show" identifier="trainerLoginSegue" id="OQs-SG-jV3"/>
                                 </connections>
                             </button>
