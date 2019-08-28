@@ -10,8 +10,8 @@ import Foundation
 
 struct User: Codable {
     let id: Int?
-    let firstName: String
-    let lastName: String
+    let firstName: String?
+    let lastName: String?
     let username: String?
     let password: String?
     let client: Int?
