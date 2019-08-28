@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 class CourseController {
     let baseURL = URL(string: "https://bw-anywhere-fitness.herokuapp.com/")!
@@ -199,6 +200,16 @@ class CourseController {
 //                return
 //            }
         }.resume()
+    }
+}
+
+extension CourseController {
+    
+    func createCourse(with name: String, location: String, dateTime: Date, type: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        guard let instructorID = currentUser?.id else { return }
+        context.performAndWait {
+            let course = 
+        }
     }
 }
 enum HTTPMethod: String{
