@@ -437,6 +437,7 @@
                                                 <state key="normal" title="Client"/>
                                                 <connections>
                                                     <action selector="clientButton:" destination="PHG-T4-zPs" eventType="touchUpInside" id="j2h-Xl-mBJ"/>
+                                                    <segue destination="2wf-cV-Aix" kind="show" identifier="freePassSegue" id="KzM-5U-c3i"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9S-wx-0gx">
@@ -479,6 +480,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWt-FA-cGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4418.840579710145" y="-1521.4285714285713"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uKk-HN-YPG">
+            <objects>
+                <viewController id="2wf-cV-Aix" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C2P-Wt-5Uj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome New Client!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcz-fR-7hj">
+                                <rect key="frame" x="20" y="94" width="374" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4H-zl-Nha">
+                                <rect key="frame" x="73" y="418" width="271" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Claim Free Pass"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="o4H-zl-Nha" firstAttribute="centerY" secondItem="C2P-Wt-5Uj" secondAttribute="centerY" id="KUK-fe-fHQ"/>
+                            <constraint firstItem="dcz-fR-7hj" firstAttribute="top" secondItem="TLd-ol-aVg" secondAttribute="top" constant="50" id="L00-r0-r3Y"/>
+                            <constraint firstItem="dcz-fR-7hj" firstAttribute="leading" secondItem="TLd-ol-aVg" secondAttribute="leading" constant="20" id="QVP-zb-0aG"/>
+                            <constraint firstItem="TLd-ol-aVg" firstAttribute="trailing" secondItem="dcz-fR-7hj" secondAttribute="trailing" constant="20" id="cSR-qd-MQh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TLd-ol-aVg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zAR-Sl-j1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5234.7826086956529" y="-1521.4285714285713"/>
         </scene>
         <!--Client Class Detail View Controller-->
         <scene sceneID="dUf-eM-lUS">
