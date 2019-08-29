@@ -20,6 +20,7 @@
 		75B18BBF2318376500CC28EC /* TrainerSessionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B18BBE2318376500CC28EC /* TrainerSessionDetailViewController.swift */; };
 		75B18BC12318383500CC28EC /* TrainerSessionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B18BC02318383500CC28EC /* TrainerSessionsTableViewController.swift */; };
 		75B18BC32318415700CC28EC /* ClientSessionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B18BC22318415700CC28EC /* ClientSessionsTableViewController.swift */; };
+		75B18BC523184AE500CC28EC /* ClientPassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B18BC423184AE500CC28EC /* ClientPassDetailViewController.swift */; };
 		75BC6F0E2314500C00C64D42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BC6F0D2314500C00C64D42 /* AppDelegate.swift */; };
 		75BC6F132314500C00C64D42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75BC6F112314500C00C64D42 /* Main.storyboard */; };
 		75BC6F152314500D00C64D42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75BC6F142314500D00C64D42 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		75B18BBE2318376500CC28EC /* TrainerSessionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerSessionDetailViewController.swift; sourceTree = "<group>"; };
 		75B18BC02318383500CC28EC /* TrainerSessionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerSessionsTableViewController.swift; sourceTree = "<group>"; };
 		75B18BC22318415700CC28EC /* ClientSessionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientSessionsTableViewController.swift; sourceTree = "<group>"; };
+		75B18BC423184AE500CC28EC /* ClientPassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientPassDetailViewController.swift; sourceTree = "<group>"; };
 		75BC6F0A2314500C00C64D42 /* AnywhereFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnywhereFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BC6F0D2314500C00C64D42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75BC6F122314500C00C64D42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				9E65BCF22317389A00F04711 /* FreePassViewController.swift */,
 				75B18BB823182C9A00CC28EC /* PassesTableViewController.swift */,
 				75B18BC22318415700CC28EC /* ClientSessionsTableViewController.swift */,
+				75B18BC423184AE500CC28EC /* ClientPassDetailViewController.swift */,
 			);
 			path = ClientViewControllers;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				842131592314C9EF008F384E /* CreateCourseViewController.swift in Sources */,
 				75C509A82315F418001C0D5B /* User.swift in Sources */,
 				9E65BCF32317389A00F04711 /* FreePassViewController.swift in Sources */,
+				75B18BC523184AE500CC28EC /* ClientPassDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

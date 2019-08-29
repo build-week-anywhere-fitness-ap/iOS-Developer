@@ -220,20 +220,41 @@
             </objects>
             <point key="canvasLocation" x="3388" y="-668"/>
         </scene>
-        <!--View Controller-->
+        <!--Client Pass Detail View Controller-->
         <scene sceneID="IGc-At-to8">
             <objects>
-                <viewController id="cKJ-Ss-jeR" sceneMemberID="viewController">
+                <viewController id="cKJ-Ss-jeR" customClass="ClientPassDetailViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Ye-HP-iqB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkV-gw-umy">
+                                <rect key="frame" x="178" y="302" width="58" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="check in"/>
+                                <connections>
+                                    <action selector="checkinTapped:" destination="cKJ-Ss-jeR" eventType="touchUpInside" id="4um-n0-OPt"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="times remaining" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1LB-E6-Bah">
+                                <rect key="frame" x="146" y="219" width="122" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="P6v-Yn-bOh"/>
                     </view>
+                    <connections>
+                        <outlet property="checkinButton" destination="VkV-gw-umy" id="ira-rH-fhu"/>
+                        <outlet property="timesRemainingLabel" destination="1LB-E6-Bah" id="aLY-3t-JoX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3jd-Hw-phi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-155" y="502"/>
+            <point key="canvasLocation" x="571.01449275362324" y="808.92857142857144"/>
         </scene>
         <!--Passes-->
         <scene sceneID="hBY-y7-mjf">

@@ -78,6 +78,13 @@ class PassesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fetchResultsController.sections?[section].numberOfObjects ?? 0
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PassDetailShowSegue" {
+            guard let passDetailVC = segue.destination as? ClientPassDetailViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
+            passDetailVC.pass = fetchResultsController.object(at: indexPath)
+        }
+    }
 }
 
 extension PassesTableViewController: NSFetchedResultsControllerDelegate {
