@@ -17,14 +17,24 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var clientButtonOutlet: UIButton!
     @IBOutlet weak var trainerButtonOutlet: UIButton!
     @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     var client = true
     var trainer = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
         clientButtonOutlet.isSelected = true
-
+        signupButton.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        signupButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+        signupButton.layer.cornerRadius = 7
+        signupButton.layer.borderWidth = 1
+        
+        cancelButton.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        cancelButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+        cancelButton.layer.cornerRadius = 7
+        cancelButton.layer.borderWidth = 1
         // Do any additional setup after loading the view.
     }
     

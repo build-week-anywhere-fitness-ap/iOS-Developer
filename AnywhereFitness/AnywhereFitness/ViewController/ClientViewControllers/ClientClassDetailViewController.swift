@@ -22,7 +22,11 @@ class ClientClassDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        getPassButton.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        getPassButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+        getPassButton.layer.cornerRadius = 7
+        getPassButton.layer.borderWidth = 1
         guard let course = course, let session = session else { return }
         nameLabel.text = course.name
         typeLabel.text = course.type
