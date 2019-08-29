@@ -225,7 +225,7 @@ extension CourseController {
     func createCourse(with name: String, location: String, type: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         guard let instructorId = currentUser?.id else { return }
         context.performAndWait {
-            let course = Course(name: name, type: type, location: location, instructorId: Int64(instructorId))
+            let course = Course(id: nil, name: name, type: type, location: location, instructorId: Int64(instructorId))
             print(course)
             
             do{
@@ -234,7 +234,20 @@ extension CourseController {
                 NSLog("Error saving context when creating new task: \(error)")
             }
             
-            post(course: course)
+            post(course: course, completion: {
+                self.deleteLocalCourseAfterCreate(course: course)
+            })
+        }
+    }
+    func deleteLocalCourseAfterCreate (course: Course, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        context.performAndWait {
+            context.delete(course)
+            do{
+                try CoreDataStack.shared.save(context: context)
+            } catch {
+                NSLog("Error saving context when deleting course: \(error)")
+            }
+            fetchCoursesFromServer()
         }
     }
     
@@ -243,10 +256,15 @@ extension CourseController {
 extension CourseController {
     //MARK:- network stuffs
     
-    func fetchCoursesFromServer(completion: @escaping () -> Void) {
+    func fetchCoursesFromServer(completion: @escaping () -> Void = {}) {
+        guard let token = currentUser?.token else { return }
         let requestURL = baseURL.appendingPathComponent("api/classes")
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(token, forHTTPHeaderField: "Authorization")
         
-        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
                 NSLog("Error fetching courses from server: \(error)")
                 return
@@ -296,7 +314,7 @@ extension CourseController {
     func course(for id: Int64, context: NSManagedObjectContext) -> Course? {
         
         
-        let predicate = NSPredicate(format: "id == %@", id as Int64)
+        let predicate = NSPredicate(format: "id == %i", id as Int64)
         
         let fetchRequest: NSFetchRequest<Course> = Course.fetchRequest()
         fetchRequest.predicate = predicate

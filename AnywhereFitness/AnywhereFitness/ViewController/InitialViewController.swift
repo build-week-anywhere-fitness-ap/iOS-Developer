@@ -21,6 +21,10 @@ class InitialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         courseController = CourseController()
+        
+        //for locate local file
+        let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        print(dir)
 
     }
     override func viewDidAppear(_ animated: Bool) {
