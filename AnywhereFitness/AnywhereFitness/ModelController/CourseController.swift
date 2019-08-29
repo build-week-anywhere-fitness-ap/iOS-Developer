@@ -36,15 +36,15 @@ class CourseController {
 //            }
 //            print("sign up")
 //        }
-        login(username: userName, password: password) { (error) in
-            if let error = error {
-                NSLog("Error login:\(error)")
-                return
-            }
-            print("login sucess")
-            print(self.currentUser?.token)
-            self.createCourse(with: "class name", location: "class location", dateTime: Date(), type: "this is type")
-        }
+//        login(username: userName, password: password) { (error) in
+//            if let error = error {
+//                NSLog("Error login:\(error)")
+//                return
+//            }
+//            print("login sucess")
+//            print(self.currentUser?.token)
+//            self.createCourse(with: "class name", location: "class location", dateTime: Date(), type: "this is type")
+//        }
 //        updateUser(firstName: "brad", lastName: "test123", password: "123456") { (error) in
 //            if let error = error {
 //                NSLog("Error login:\(error)")

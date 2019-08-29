@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewTrainerViewController: UIViewController {
+class SignUpViewController: UIViewController {
     
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -16,11 +16,10 @@ class NewTrainerViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var clientButtonOutlet: UIButton!
     @IBOutlet weak var trainerButtonOutlet: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
     
-    var courseController = CourseController()
-    
-    var clientNum: Int
-    var trainerNum: Int
+    var clientNum: Int = 1
+    var trainerNum: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +45,12 @@ class NewTrainerViewController: UIViewController {
     
     
     @IBAction func saveButton(_ sender: UIButton) {
+        signupButton.isEnabled = false
         createUser()
     }
     
     @IBAction func cancelButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func createUser() {
@@ -62,9 +63,23 @@ class NewTrainerViewController: UIViewController {
             
             !firstName.isEmpty,
             !userName.isEmpty,
-            !password.isEmpty  else { return }
+            !password.isEmpty  else {
+                signupButton.isEnabled = true
+                return
+                
+        }
 
-        courseController.signUp(firstName: firstName, lastName: lastName, username: userName, password: password, client: clientNum, instructor: trainerNum, completion: <#T##(NetworkError?) -> Void#>)
+        courseController?.signUp(firstName: firstName, lastName: lastName, username: userName, password: password, client: clientNum, instructor: trainerNum) { (error) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    NSLog("Error signing up: \(error)")
+                    self.signupButton.isEnabled = true
+                    return
+                }
+                print("sign up complete")
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
     }
     /*
     // MARK: - Navigation
