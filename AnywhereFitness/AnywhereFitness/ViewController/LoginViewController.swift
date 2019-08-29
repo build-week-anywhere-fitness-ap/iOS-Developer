@@ -52,16 +52,17 @@ class LoginViewController: UIViewController {
                 return
             }
             DispatchQueue.main.async {
-                if courseController?.currentUser?.instructor == 0 {
+                if courseController?.currentUser?.client == 1 {
                     self.delegate?.setUserType(userType: .client)
                     self.dismiss(animated: true, completion: nil)
-                } else {
+                } else if courseController?.currentUser?.instructor == 1 {
                     self.delegate?.setUserType(userType: .instructor)
                     self.dismiss(animated: true, completion: nil)
+                } else {
+                    print("cant login")
+                    self.loginButton.isEnabled = true
                 }
-                
             }
-          
         })
     }
 

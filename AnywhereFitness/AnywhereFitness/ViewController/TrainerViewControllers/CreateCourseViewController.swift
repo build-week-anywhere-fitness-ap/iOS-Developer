@@ -9,25 +9,32 @@
 import UIKit
 
 class CreateCourseViewController: UIViewController {
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var typeTextField: UITextField!
+    @IBOutlet weak var locationTextField: UITextField!
 
+    @IBOutlet weak var saveButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        // Do any additional setup after loading the view.
     }
     
-
+    
     @IBAction func saveButton(_ sender: UIButton) {
+        saveButton.isEnabled = false
+        createCourse()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func createCourse() {
+        guard let name = nameTextField.text, !name.isEmpty, let type = typeTextField.text, !type.isEmpty, let location = locationTextField.text, !location.isEmpty else {
+            DispatchQueue.main.async {
+                self.saveButton.isEnabled = true
+            }
+            return
+        }
+        courseController?.createCourse(with: name, location: location, type: type)
+        navigationController?.popViewController(animated: true)
     }
-    */
-
+    
 }

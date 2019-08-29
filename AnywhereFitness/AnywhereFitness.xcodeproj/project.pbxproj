@@ -24,7 +24,6 @@
 		842131572314C993008F384E /* ClientClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842131562314C993008F384E /* ClientClassDetailViewController.swift */; };
 		842131592314C9EF008F384E /* CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842131582314C9EF008F384E /* CreateCourseViewController.swift */; };
 		9E65BCF32317389A00F04711 /* FreePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E65BCF22317389A00F04711 /* FreePassViewController.swift */; };
-		9E9505A3231489CD00256BA3 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505A2231489CD00256BA3 /* SelectionViewController.swift */; };
 		9E9505A523148D3200256BA3 /* ClientLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505A423148D3200256BA3 /* ClientLoginViewController.swift */; };
 		9E9505A72314925A00256BA3 /* NewClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505A62314925A00256BA3 /* NewClientViewController.swift */; };
 		9E9505AB231492ED00256BA3 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505AA231492ED00256BA3 /* ForgotPasswordViewController.swift */; };
@@ -55,7 +54,6 @@
 		842131562314C993008F384E /* ClientClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientClassDetailViewController.swift; sourceTree = "<group>"; };
 		842131582314C9EF008F384E /* CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCourseViewController.swift; sourceTree = "<group>"; };
 		9E65BCF22317389A00F04711 /* FreePassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreePassViewController.swift; sourceTree = "<group>"; };
-		9E9505A2231489CD00256BA3 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectionViewController.swift; path = AnywhereFitness/ViewController/SelectionViewController.swift; sourceTree = SOURCE_ROOT; };
 		9E9505A423148D3200256BA3 /* ClientLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClientLoginViewController.swift; path = AnywhereFitness/ViewController/ClientViewControllers/ClientLoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		9E9505A62314925A00256BA3 /* NewClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewClientViewController.swift; sourceTree = "<group>"; };
 		9E9505AA231492ED00256BA3 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -125,13 +123,12 @@
 		75BC6F20231451DE00C64D42 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				9E9505A2231489CD00256BA3 /* SelectionViewController.swift */,
+				75B18BB2231793B400CC28EC /* InitialViewController.swift */,
 				9E9505B42314967C00256BA3 /* LoginViewController.swift */,
 				9E9505B62314975D00256BA3 /* SignUpViewController.swift */,
 				9E9505AA231492ED00256BA3 /* ForgotPasswordViewController.swift */,
 				8421315A2314CA63008F384E /* TrainerViewControllers */,
 				8421315B2314CA79008F384E /* ClientViewControllers */,
-				75B18BB2231793B400CC28EC /* InitialViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -251,7 +248,6 @@
 				842131572314C993008F384E /* ClientClassDetailViewController.swift in Sources */,
 				75C509A42315D5A5001C0D5B /* CourseController.swift in Sources */,
 				9E9505A523148D3200256BA3 /* ClientLoginViewController.swift in Sources */,
-				9E9505A3231489CD00256BA3 /* SelectionViewController.swift in Sources */,
 				75B18BB3231793B400CC28EC /* InitialViewController.swift in Sources */,
 				842131552314C96B008F384E /* BuyClassPassViewController.swift in Sources */,
 				9E9505B1231493A100256BA3 /* ClientForgotPasswordViewController.swift in Sources */,

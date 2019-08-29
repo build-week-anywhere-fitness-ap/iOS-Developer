@@ -222,10 +222,10 @@ extension CourseController {
     
     //MARK:- course CRUD
     
-    func createCourse(with name: String, location: String, dateTime: Date, type: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    func createCourse(with name: String, location: String, type: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         guard let instructorId = currentUser?.id else { return }
         context.performAndWait {
-            let course = Course(name: name, type: type, location: location, instructorId: Int64(instructorId), dateTime: dateTime)
+            let course = Course(name: name, type: type, location: location, instructorId: Int64(instructorId))
             print(course)
             
             do{
@@ -234,7 +234,7 @@ extension CourseController {
                 NSLog("Error saving context when creating new task: \(error)")
             }
             
-            put(course: course)
+            post(course: course)
         }
     }
     
@@ -279,7 +279,6 @@ extension CourseController {
                     //task exist in core data, update it
                     course.name = courseRepresentation.name
                     course.location = courseRepresentation.location
-                    course.dateTime = courseRepresentation.dateTime
                     course.type = courseRepresentation.type
                 } else {
                     //task not exist, make new one
@@ -311,7 +310,7 @@ extension CourseController {
         return course
     }
     
-    func put(course: Course, completion: @escaping () -> Void = {}) {
+    func post(course: Course, completion: @escaping () -> Void = {}) {
         guard let token = currentUser?.token else { return }
         let requestURL = baseURL.appendingPathComponent("api/classes")
         var request = URLRequest(url: requestURL)
@@ -334,7 +333,7 @@ extension CourseController {
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
-                NSLog("Error PUTing course representation to server: \(error)")
+                NSLog("Error POSTing course representation to server: \(error)")
             }
             guard let data = data else {
                 NSLog("no data")

@@ -14,7 +14,6 @@ struct CourseRepresentation: Codable {
         case location
         case instructorId = "instructor_id"
         case type
-        case dateTime
         case id
     }
     var id: Int64?
@@ -22,5 +21,4 @@ struct CourseRepresentation: Codable {
     var location: String?
     var type: String?
     var instructorId: Int64?
-    var dateTime: Date?
 }

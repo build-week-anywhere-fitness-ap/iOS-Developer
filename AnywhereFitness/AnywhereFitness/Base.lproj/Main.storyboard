@@ -161,15 +161,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgC-qS-4wB">
-                                <rect key="frame" x="20" y="548" width="374" height="48"/>
+                                <rect key="frame" x="20" y="388" width="374" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="Create"/>
                                 <connections>
                                     <action selector="saveButton:" destination="7mP-4o-a7n" eventType="touchUpInside" id="poS-HY-EkG"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Mfb-dl-gVf">
-                                <rect key="frame" x="20" y="168" width="374" height="350"/>
+                                <rect key="frame" x="20" y="168" width="374" height="190"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Course Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ulu-sE-LtP">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -177,26 +177,14 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Catagory" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KaJ-m0-b9S">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type of exercise" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KaJ-m0-b9S">
                                         <rect key="frame" x="0.0" y="80" width="374" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Trainer Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tiG-zo-z5H">
-                                        <rect key="frame" x="0.0" y="160" width="374" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s9J-X0-Egt">
-                                        <rect key="frame" x="0.0" y="240" width="374" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FJc-og-xcW">
-                                        <rect key="frame" x="0.0" y="320" width="374" height="30"/>
+                                        <rect key="frame" x="0.0" y="160" width="374" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -218,6 +206,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="y41-XS-A2L"/>
                     </view>
+                    <connections>
+                        <outlet property="locationTextField" destination="s9J-X0-Egt" id="BQj-en-mkG"/>
+                        <outlet property="nameTextField" destination="ulu-sE-LtP" id="C2U-RV-FbA"/>
+                        <outlet property="saveButton" destination="xgC-qS-4wB" id="vMi-9F-dzo"/>
+                        <outlet property="typeTextField" destination="KaJ-m0-b9S" id="DQq-c3-HHA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQM-qL-xBd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
