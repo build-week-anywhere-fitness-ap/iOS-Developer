@@ -54,7 +54,7 @@ class PassesTableViewController: UITableViewController {
         return fetchResultsController.sections?.count ?? 0
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TrainerCourseCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PassCell", for: indexPath)
         
         let pass = fetchResultsController.object(at: indexPath)
         

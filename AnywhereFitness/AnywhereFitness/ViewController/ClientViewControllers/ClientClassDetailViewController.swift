@@ -35,5 +35,7 @@ class ClientClassDetailViewController: UIViewController {
     }
     
     @IBAction func getPassTapped(_ sender: UIButton) {
+        guard let courseId = course?.id else { return }
+        courseController?.createPass(with: courseId)
     }
 }
