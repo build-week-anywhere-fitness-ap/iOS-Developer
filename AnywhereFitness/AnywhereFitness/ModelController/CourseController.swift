@@ -231,7 +231,7 @@ extension CourseController {
             do{
                 try CoreDataStack.shared.save(context: context)
             } catch {
-                NSLog("Error saving context when creating new task: \(error)")
+                NSLog("Error saving context when creating new course: \(error)")
             }
             
             post(course: course, completion: {
@@ -250,8 +250,37 @@ extension CourseController {
             fetchCoursesFromServer()
         }
     }
-    
-
+}
+extension CourseController {
+    //MARK:- CRUD for pass
+    func createPass(with classId: Int64, completed: Bool = false, timesUsed: Int64 = 0, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        guard let clientId = currentUser?.id else { return }
+        context.performAndWait {
+            let pass = Pass(id: nil, classId: classId, clientId: Int64(clientId), completed: completed, timesUsed: timesUsed)
+            print(pass)
+            
+            do{
+                try CoreDataStack.shared.save(context: context)
+            } catch {
+                NSLog("Error saving context when creating new pass: \(error)")
+            }
+            
+            post(pass: pass, completion: {
+                self.deleteLocalPassAfterCreate(pass: pass)
+            })
+        }
+    }
+    func deleteLocalPassAfterCreate (pass: Pass, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        context.performAndWait {
+            context.delete(pass)
+            do{
+                try CoreDataStack.shared.save(context: context)
+            } catch {
+                NSLog("Error saving context when deleting course: \(error)")
+            }
+            fetchPassesFromServer()
+        }
+    }
 }
 extension CourseController {
     //MARK:- network stuffs
@@ -328,6 +357,77 @@ extension CourseController {
         return course
     }
     
+    func fetchPassesFromServer(completion: @escaping () -> Void = {}) {
+        guard let token = currentUser?.token, let clientId = currentUser?.id else { return }
+        let requestURL = baseURL.appendingPathComponent("api/users/\(clientId)/passes")
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(token, forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                NSLog("Error fetching passes from server: \(error)")
+                return
+            }
+            guard let data = data else {
+                NSLog("No data returned from data task")
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                let passRepresentations = try decoder.decode([PassRepresentation].self, from: data)
+                
+                // loop through the course representations
+                let moc = CoreDataStack.shared.container.newBackgroundContext()
+                self.updatePersistentStore(with: passRepresentations, context: moc)
+            }catch {
+                NSLog("Error decoding: \(error), no pass for this user")
+            }
+            completion()
+            }.resume()
+    }
+    
+    func updatePersistentStore(with passRepresentations: [PassRepresentation], context: NSManagedObjectContext) {
+        context.performAndWait {
+            for passRepresentation in passRepresentations {
+                //see if a task with the same identifier exist in core data
+                guard let id = passRepresentation.id else { continue }
+                // update it if one does exist, or create a Task if it doesn't
+                if let pass = pass(for: id, context: context) {
+                    //task exist in core data, update it
+                    pass.timesUsed = passRepresentation.timesUsed ?? 0
+                    pass.completed = passRepresentation.completed ?? false
+                } else {
+                    //task not exist, make new one
+                    Pass(passRepresentation: passRepresentation, context: context)
+                }
+            }
+            do {
+                try CoreDataStack.shared.save(context: context)
+            } catch {
+                NSLog("Error saving \(error)")
+                context.reset()
+            }
+        }
+    }
+    func pass(for id: Int64, context: NSManagedObjectContext) -> Pass? {
+        
+        
+        let predicate = NSPredicate(format: "id == %i", id as Int64)
+        
+        let fetchRequest: NSFetchRequest<Pass> = Pass.fetchRequest()
+        fetchRequest.predicate = predicate
+        
+        var pass: Pass? = nil
+        do {
+            pass = try context.fetch(fetchRequest).first
+        } catch {
+            NSLog("Error fetching course for identifier: \(error)")
+        }
+        return pass
+    }
+    
     func post(course: Course, completion: @escaping () -> Void = {}) {
         guard let token = currentUser?.token else { return }
         let requestURL = baseURL.appendingPathComponent("api/classes")
@@ -371,6 +471,47 @@ extension CourseController {
         }.resume()
     }
     
+    func post(pass: Pass, completion: @escaping () -> Void = {}) {
+        guard let token = currentUser?.token else { return }
+        let requestURL = baseURL.appendingPathComponent("api/passes")
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(token, forHTTPHeaderField: "Authorization")
+        let encoder = JSONEncoder()
+        var passRep = pass.passRepresentation
+        passRep.id = nil
+        do {
+            let passData = try encoder.encode(passRep)
+            request.httpBody = passData
+            
+        } catch {
+            NSLog("Error encoding pass representation: \(error)")
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                NSLog("Error POSTing pass representation to server: \(error)")
+            }
+            guard let data = data else {
+                NSLog("no data")
+                return
+            }
+            do {
+                let passIdArray = try JSONDecoder().decode([Int].self, from: data)
+                print(passIdArray)
+                if let passId = passIdArray.first {
+                    print(passId)
+                }
+            } catch {
+                NSLog("Error decoding when POSTing to server: \(error)")
+                return
+            }
+            completion()
+            }.resume()
+    }
+    
 //    func deleteFromServer(course: Course, completion: (() -> Void)? = nil) {
 //        guard let identifier = task.identifier else {
 //            completion?()
@@ -388,6 +529,8 @@ extension CourseController {
 //            }.resume()
 //    }
 }
+
+
 enum HTTPMethod: String{
     case get = "GET"
     case put = "PUT"

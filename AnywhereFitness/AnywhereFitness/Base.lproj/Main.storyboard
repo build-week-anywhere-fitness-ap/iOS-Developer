@@ -233,12 +233,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3jd-Hw-phi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-584" y="658"/>
+            <point key="canvasLocation" x="-155" y="502"/>
         </scene>
         <!--Passes-->
         <scene sceneID="hBY-y7-mjf">
             <objects>
-                <tableViewController id="A3J-mR-d1W" sceneMemberID="viewController">
+                <tableViewController id="A3J-mR-d1W" customClass="PassesTableViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NwI-BN-FLQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
