@@ -281,6 +281,19 @@ extension CourseController {
             fetchPassesFromServer()
         }
     }
+    
+    func updatePass(pass: Pass, timesUsed: Int64, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        context.performAndWait {
+            pass.timesUsed = timesUsed
+            do {
+                try CoreDataStack.shared.save(context: context)
+            } catch {
+                NSLog("Error saving to persistent when updating:\(error)")
+                context.reset()
+            }
+            update(pass: pass)
+        }
+    }
 }
 
 extension CourseController {
@@ -479,6 +492,9 @@ extension CourseController {
             }
             do {
                 let decoder = JSONDecoder()
+                let dateformatter = DateFormatter()
+                dateformatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                decoder.dateDecodingStrategy = .formatted(dateformatter)
                 let sessionRepresentations = try decoder.decode([SessionRepresentation].self, from: data)
                 
                 // loop through the course representations
@@ -614,6 +630,48 @@ extension CourseController {
             }.resume()
     }
     
+    func update(pass: Pass, completion: @escaping () -> Void = {}) {
+        guard let token = currentUser?.token else { return }
+        let passId = pass.id
+        let requestURL = baseURL.appendingPathComponent("api/passes/\(passId)")
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.put.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(token, forHTTPHeaderField: "Authorization")
+        let encoder = JSONEncoder()
+        let passRep = pass.passRepresentation
+        //passRep.id = nil
+        do {
+            let passData = try encoder.encode(passRep)
+            request.httpBody = passData
+            
+        } catch {
+            NSLog("Error encoding pass representation: \(error)")
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                NSLog("Error PUTing pass representation update to server: \(error)")
+            }
+//            guard let data = data else {
+//                NSLog("no data")
+//                return
+//            }
+//            do {
+//                let passIdArray = try JSONDecoder().decode([Int].self, from: data)
+//                print(passIdArray)
+//                if let passId = passIdArray.first {
+//                    print(passId)
+//                }
+//            } catch {
+//                NSLog("Error decoding when PUTing to server: \(error)")
+//                return
+//            }
+            completion()
+            }.resume()
+    }
+    
     func post(session: Session, completion: @escaping () -> Void = {}) {
         guard let token = currentUser?.token else { return }
         let requestURL = baseURL.appendingPathComponent("api/sessions")
@@ -622,7 +680,9 @@ extension CourseController {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue(token, forHTTPHeaderField: "Authorization")
         let encoder = JSONEncoder()
-        encoder.dateEncodingStrategy = .iso8601
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        encoder.dateEncodingStrategy = .formatted(dateFormatter)
         var sessionRep = session.sessionRepresentation
         sessionRep.id = nil
         do {
@@ -656,6 +716,8 @@ extension CourseController {
             completion()
         }.resume()
     }
+    
+    
     
 //    func deleteFromServer(course: Course, completion: (() -> Void)? = nil) {
 //        guard let identifier = task.identifier else {
