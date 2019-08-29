@@ -24,11 +24,9 @@
 		842131572314C993008F384E /* ClientClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842131562314C993008F384E /* ClientClassDetailViewController.swift */; };
 		842131592314C9EF008F384E /* CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842131582314C9EF008F384E /* CreateCourseViewController.swift */; };
 		9E65BCF32317389A00F04711 /* FreePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E65BCF22317389A00F04711 /* FreePassViewController.swift */; };
-		9E9505A523148D3200256BA3 /* ClientLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505A423148D3200256BA3 /* ClientLoginViewController.swift */; };
-		9E9505A72314925A00256BA3 /* NewClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505A62314925A00256BA3 /* NewClientViewController.swift */; };
 		9E9505AB231492ED00256BA3 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505AA231492ED00256BA3 /* ForgotPasswordViewController.swift */; };
 		9E9505B1231493A100256BA3 /* ClientForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505B0231493A100256BA3 /* ClientForgotPasswordViewController.swift */; };
-		9E9505B3231493E300256BA3 /* CourseSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505B2231493E300256BA3 /* CourseSelectionTableViewController.swift */; };
+		9E9505B3231493E300256BA3 /* ClientCourseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505B2231493E300256BA3 /* ClientCourseTableViewController.swift */; };
 		9E9505B52314967C00256BA3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505B42314967C00256BA3 /* LoginViewController.swift */; };
 		9E9505B72314975D00256BA3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505B62314975D00256BA3 /* SignUpViewController.swift */; };
 		9E9505B9231497E800256BA3 /* TrainerCourseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9505B8231497E800256BA3 /* TrainerCourseTableViewController.swift */; };
@@ -54,11 +52,9 @@
 		842131562314C993008F384E /* ClientClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientClassDetailViewController.swift; sourceTree = "<group>"; };
 		842131582314C9EF008F384E /* CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCourseViewController.swift; sourceTree = "<group>"; };
 		9E65BCF22317389A00F04711 /* FreePassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreePassViewController.swift; sourceTree = "<group>"; };
-		9E9505A423148D3200256BA3 /* ClientLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClientLoginViewController.swift; path = AnywhereFitness/ViewController/ClientViewControllers/ClientLoginViewController.swift; sourceTree = SOURCE_ROOT; };
-		9E9505A62314925A00256BA3 /* NewClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewClientViewController.swift; sourceTree = "<group>"; };
 		9E9505AA231492ED00256BA3 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		9E9505B0231493A100256BA3 /* ClientForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientForgotPasswordViewController.swift; sourceTree = "<group>"; };
-		9E9505B2231493E300256BA3 /* CourseSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseSelectionTableViewController.swift; sourceTree = "<group>"; };
+		9E9505B2231493E300256BA3 /* ClientCourseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientCourseTableViewController.swift; sourceTree = "<group>"; };
 		9E9505B42314967C00256BA3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9E9505B62314975D00256BA3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9E9505B8231497E800256BA3 /* TrainerCourseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerCourseTableViewController.swift; sourceTree = "<group>"; };
@@ -153,9 +149,7 @@
 		8421315B2314CA79008F384E /* ClientViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9E9505A423148D3200256BA3 /* ClientLoginViewController.swift */,
-				9E9505A62314925A00256BA3 /* NewClientViewController.swift */,
-				9E9505B2231493E300256BA3 /* CourseSelectionTableViewController.swift */,
+				9E9505B2231493E300256BA3 /* ClientCourseTableViewController.swift */,
 				842131542314C96B008F384E /* BuyClassPassViewController.swift */,
 				842131562314C993008F384E /* ClientClassDetailViewController.swift */,
 				9E9505B0231493A100256BA3 /* ClientForgotPasswordViewController.swift */,
@@ -236,18 +230,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E9505AB231492ED00256BA3 /* ForgotPasswordViewController.swift in Sources */,
-				9E9505B3231493E300256BA3 /* CourseSelectionTableViewController.swift in Sources */,
+				9E9505B3231493E300256BA3 /* ClientCourseTableViewController.swift in Sources */,
 				75C509A62315E75C001C0D5B /* UserLogin.swift in Sources */,
 				75B18BAF2317065A00CC28EC /* Course+Convenience.swift in Sources */,
 				9E9505B72314975D00256BA3 /* SignUpViewController.swift in Sources */,
 				9E9505B52314967C00256BA3 /* LoginViewController.swift in Sources */,
-				9E9505A72314925A00256BA3 /* NewClientViewController.swift in Sources */,
 				75B18BAB2316EAF000CC28EC /* CoreDataStacks.swift in Sources */,
 				9E9505B9231497E800256BA3 /* TrainerCourseTableViewController.swift in Sources */,
 				75B18BA92316EA9500CC28EC /* AnywhereFitnessModel.xcdatamodeld in Sources */,
 				842131572314C993008F384E /* ClientClassDetailViewController.swift in Sources */,
 				75C509A42315D5A5001C0D5B /* CourseController.swift in Sources */,
-				9E9505A523148D3200256BA3 /* ClientLoginViewController.swift in Sources */,
 				75B18BB3231793B400CC28EC /* InitialViewController.swift in Sources */,
 				842131552314C96B008F384E /* BuyClassPassViewController.swift in Sources */,
 				9E9505B1231493A100256BA3 /* ClientForgotPasswordViewController.swift in Sources */,
