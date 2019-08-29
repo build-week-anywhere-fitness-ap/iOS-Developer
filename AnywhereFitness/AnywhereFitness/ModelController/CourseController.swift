@@ -243,35 +243,73 @@ extension CourseController {
 extension CourseController {
     //MARK:- network stuffs
     
-//    func fetchCoursesFromServer(completion: @escaping () -> Void) {
-//        let requestURL = baseURL.appendingPathComponent("api/classes")
-//        
-//        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
-//            if let error = error {
-//                NSLog("Error fetching courses from server: \(error)")
-//                return
-//            }
-//            guard let data = data else {
-//                NSLog("No data returned from data task")
-//                completion()
-//                return
-//            }
-//            do {
-//                let decoder = JSONDecoder()
-//                let taskRepDictionary = try decoder.decode([String: TaskRepresentation].self, from: data)
-//                
-//                //turn dict into array
-//                let taskRepresentations = taskRepDictionary.map({$0.value})
-//                
-//                // loop through the task representations
-//                let moc = CoreDataStack.shared.container.newBackgroundContext()
-//                self.updatePersistentStore(with: taskRepresentations, context: moc)
-//            }catch {
-//                NSLog("Error decoding: \(error)")
-//            }
-//            completion()
-//            }.resume()
-//    }
+    func fetchCoursesFromServer(completion: @escaping () -> Void) {
+        let requestURL = baseURL.appendingPathComponent("api/classes")
+        
+        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
+            if let error = error {
+                NSLog("Error fetching courses from server: \(error)")
+                return
+            }
+            guard let data = data else {
+                NSLog("No data returned from data task")
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                let courseRepresentations = try decoder.decode([CourseRepresentation].self, from: data)
+                
+                // loop through the course representations
+                let moc = CoreDataStack.shared.container.newBackgroundContext()
+                self.updatePersistentStore(with: courseRepresentations, context: moc)
+            }catch {
+                NSLog("Error decoding: \(error)")
+            }
+            completion()
+        }.resume()
+    }
+    
+    func updatePersistentStore(with courseRepresentations: [CourseRepresentation], context: NSManagedObjectContext) {
+        context.performAndWait {
+            for courseRepresentation in courseRepresentations {
+                //see if a task with the same identifier exist in core data
+                guard let id = courseRepresentation.id else { continue }
+                // update it if one does exist, or create a Task if it doesn't
+                if let course = course(for: id, context: context) {
+                    //task exist in core data, update it
+                    course.name = courseRepresentation.name
+                    course.location = courseRepresentation.location
+                    course.dateTime = courseRepresentation.dateTime
+                    course.type = courseRepresentation.type
+                } else {
+                    //task not exist, make new one
+                    Course(courseRepresentation: courseRepresentation, context: context)
+                }
+            }
+            do {
+                try CoreDataStack.shared.save(context: context)
+            } catch {
+                NSLog("Error saving \(error)")
+                context.reset()
+            }
+        }
+    }
+    func course(for id: Int64, context: NSManagedObjectContext) -> Course? {
+        
+        
+        let predicate = NSPredicate(format: "id == %@", id as Int64)
+        
+        let fetchRequest: NSFetchRequest<Course> = Course.fetchRequest()
+        fetchRequest.predicate = predicate
+        
+        var course: Course? = nil
+        do {
+            course = try context.fetch(fetchRequest).first
+        } catch {
+            NSLog("Error fetching course for identifier: \(error)")
+        }
+        return course
+    }
     
     func put(course: Course, completion: @escaping () -> Void = {}) {
         guard let token = currentUser?.token else { return }
