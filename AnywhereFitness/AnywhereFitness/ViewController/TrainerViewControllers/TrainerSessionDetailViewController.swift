@@ -31,6 +31,8 @@ class TrainerSessionDetailViewController: UIViewController {
     @IBAction func save(_ sender: UIButton) {
         if let session = session {
             //update
+            courseController?.updateSession(session: session, dateTime: datePicker.date)
+            navigationController?.popViewController(animated: true)
         } else {
             //create new
             guard let course = course else { return }

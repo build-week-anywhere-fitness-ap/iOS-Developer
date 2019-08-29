@@ -28,31 +28,6 @@ class CourseController {
     let password = "123456"
     
     init() {
-        
-        print("init")
-//        signUp(firstName: "brad", lastName: "test", username: userName, password: password, client: 0, instructor: 1) { (error) in
-//            if let error = error {
-//                print(error)
-//            }
-//            print("sign up")
-//        }
-//        login(username: userName, password: password) { (error) in
-//            if let error = error {
-//                NSLog("Error login:\(error)")
-//                return
-//            }
-//            print("login sucess")
-//            print(self.currentUser?.token)
-//            self.createCourse(with: "class name", location: "class location", dateTime: Date(), type: "this is type")
-//        }
-//        updateUser(firstName: "brad", lastName: "test123", password: "123456") { (error) in
-//            if let error = error {
-//                NSLog("Error login:\(error)")
-//                return
-//            }
-//            print("update sucess")
-//        }
-        
     }
     
     
@@ -195,26 +170,7 @@ extension CourseController {
                 return
             }
             completion(nil)
-            //            guard let data = data else {
-            //                completion(.noData)
-            //                return
-            //            }
-            //            do {
-            //                let responseInt = try JSONDecoder().decode(Int.self, from: data)
-            //                if responseInt == 1 {
-            //                    completion(nil)
-            //                    return
-            //                } else {
-            //                    completion(.failure)
-            //                    return
-            //                }
-            //
-            //            } catch {
-            //                NSLog("Error decoding when update: \(error)")
-            //                completion(.noDecode)
-            //                return
-            //            }
-            }.resume()
+        }.resume()
     }
 }
 
@@ -299,7 +255,6 @@ extension CourseController {
 extension CourseController {
     //MARK:- CRUD for session
     func createSession(with classId: Int64, dateTime: Date, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-        guard let clientId = currentUser?.id else { return }
         context.performAndWait {
             let session = Session(id: nil, classId: classId, dateTime: dateTime, context: context)
             print(session)
@@ -324,6 +279,18 @@ extension CourseController {
                 NSLog("Error saving context when deleting course: \(error)")
             }
             fetchSessionsFromServer(classId: classId)
+        }
+    }
+    func updateSession(session: Session, dateTime: Date, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        context.performAndWait {
+            session.dateTime = dateTime
+            do {
+                try CoreDataStack.shared.save(context: context)
+            } catch {
+                NSLog("Error saving to persistent when updating:\(error)")
+                context.reset()
+            }
+            update(session: session)
         }
     }
 }
@@ -712,6 +679,37 @@ extension CourseController {
             } catch {
                 NSLog("Error decoding when POSTing to server: \(error)")
                 return
+            }
+            completion()
+        }.resume()
+    }
+    
+    func update(session: Session, completion: @escaping () -> Void = {}) {
+        guard let token = currentUser?.token else { return }
+        let sessionId = session.id
+        let requestURL = baseURL.appendingPathComponent("api/sessions/\(sessionId)")
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.put.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(token, forHTTPHeaderField: "Authorization")
+        let encoder = JSONEncoder()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        encoder.dateEncodingStrategy = .formatted(dateFormatter)
+        let sessionRep = session.sessionRepresentation
+        //passRep.id = nil
+        do {
+            let sessionData = try encoder.encode(sessionRep)
+            request.httpBody = sessionData
+            
+        } catch {
+            NSLog("Error encoding session representation: \(error)")
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                NSLog("Error PUTing pass representation update to server: \(error)")
             }
             completion()
         }.resume()
