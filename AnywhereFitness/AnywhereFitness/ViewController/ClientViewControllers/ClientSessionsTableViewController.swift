@@ -1,26 +1,28 @@
 //
-//  ClientCourseTableViewController.swift
+//  ClientSessionTableViewController.swift
 //  AnywhereFitness
 //
-//  Created by William Chen on 8/26/19.
+//  Created by Bradley Yin on 8/29/19.
 //  Copyright © 2019 bradleyyin. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class ClientCourseTableViewController: UITableViewController {
+class ClientSessionsTableViewController: UITableViewController {
+
+    var course: Course?
     
-    lazy var fetchResultsController: NSFetchedResultsController<Course> = {
-        let fetchRequest: NSFetchRequest<Course> = Course.fetchRequest()
+    lazy var fetchResultsController: NSFetchedResultsController<Session> = {
+        let fetchRequest: NSFetchRequest<Session> = Session.fetchRequest()
         
-        let nameDescriptor = NSSortDescriptor(key: "name", ascending: false)
+        let dateDescriptor = NSSortDescriptor(key: "dateTime", ascending: false)
         
         // YOU MUST make the descriptor with the same key path as the sectionNameKeyPath be the first sort descriptor in this array
         
-        fetchRequest.sortDescriptors = [nameDescriptor]
+        fetchRequest.sortDescriptors = [dateDescriptor]
         
-        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.shared.mainContext, sectionNameKeyPath: "name", cacheName: nil)
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.shared.mainContext, sectionNameKeyPath: "dateTime", cacheName: nil)
         
         frc.delegate = self
         
@@ -32,12 +34,10 @@ class ClientCourseTableViewController: UITableViewController {
         
         return frc
     }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.leftBarButtonItem = nil
         
-        courseController?.fetchCoursesFromServer {
+        courseController?.fetchSessionsFromServer(classId: course?.id ?? 0) {
             //done fetch
         }
     }
@@ -54,11 +54,13 @@ class ClientCourseTableViewController: UITableViewController {
         return fetchResultsController.sections?.count ?? 0
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ClientCourseCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ClientSessionCell", for: indexPath)
         
-        let course = fetchResultsController.object(at: indexPath)
+        let session = fetchResultsController.object(at: indexPath)
         
-        cell.textLabel?.text = course.name
+        let dateFormatter = ISO8601DateFormatter()
+        
+        cell.textLabel?.text = dateFormatter.string(from: session.dateTime ?? Date())
         
         return cell
     }
@@ -67,15 +69,15 @@ class ClientCourseTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ClientSessionShowSegue" {
-            guard let clientSessionsVC = segue.destination as? ClientSessionsTableViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
-            let course = fetchResultsController.object(at: indexPath)
-            clientSessionsVC.course = course
+        if segue.identifier == "ClientSessionDetailShowSegue" {
+            guard let clientSessionDetailVC = segue.destination as? ClientClassDetailViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
+            clientSessionDetailVC.session = fetchResultsController.object(at: indexPath)
+            clientSessionDetailVC.course = course
         }
     }
-
 }
-extension ClientCourseTableViewController: NSFetchedResultsControllerDelegate {
+
+extension ClientSessionsTableViewController: NSFetchedResultsControllerDelegate {
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
