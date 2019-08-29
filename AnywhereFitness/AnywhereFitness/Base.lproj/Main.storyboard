@@ -236,15 +236,19 @@
                                     <action selector="checkinTapped:" destination="cKJ-Ss-jeR" eventType="touchUpInside" id="4um-n0-OPt"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="times remaining" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1LB-E6-Bah">
-                                <rect key="frame" x="146" y="219" width="122" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="times remaining" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1LB-E6-Bah">
+                                <rect key="frame" x="50" y="188" width="314" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1LB-E6-Bah" firstAttribute="top" secondItem="P6v-Yn-bOh" secondAttribute="top" constant="100" id="Rl3-VU-wDn"/>
+                            <constraint firstItem="P6v-Yn-bOh" firstAttribute="trailing" secondItem="1LB-E6-Bah" secondAttribute="trailing" constant="50" id="maw-zo-RRm"/>
+                            <constraint firstItem="1LB-E6-Bah" firstAttribute="leading" secondItem="P6v-Yn-bOh" secondAttribute="leading" constant="50" id="yEn-WI-jvW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="P6v-Yn-bOh"/>
                     </view>
                     <connections>
