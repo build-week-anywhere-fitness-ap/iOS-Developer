@@ -52,10 +52,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nEd-7R-g5o">
-                                <rect key="frame" x="125" y="607" width="123" height="68"/>
+                                <rect key="frame" x="125" y="607" width="164" height="68"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyU-pS-GLu">
-                                        <rect key="frame" x="42.5" y="0.0" width="38" height="30"/>
+                                        <rect key="frame" x="63" y="0.0" width="38" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="Login">
                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -64,7 +65,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2BZ-qC-wFo">
-                                        <rect key="frame" x="0.0" y="38" width="123" height="30"/>
+                                        <rect key="frame" x="20.5" y="38" width="123" height="30"/>
                                         <state key="normal" title="Forgot Password?"/>
                                         <connections>
                                             <segue destination="Sms-mk-ZVa" kind="show" id="AXm-hk-Y7E"/>
@@ -86,6 +87,7 @@
                         <constraints>
                             <constraint firstItem="GNT-eR-8G9" firstAttribute="top" secondItem="FAr-12-Yob" secondAttribute="bottom" constant="23" id="44O-Mt-48c"/>
                             <constraint firstItem="nEd-7R-g5o" firstAttribute="leading" secondItem="ldv-FE-oTC" secondAttribute="leading" constant="125" id="F7u-ve-hDk"/>
+                            <constraint firstItem="nEd-7R-g5o" firstAttribute="centerX" secondItem="zjy-cL-IJU" secondAttribute="centerX" id="Ghr-cb-N9I"/>
                             <constraint firstItem="ldv-FE-oTC" firstAttribute="trailing" secondItem="B2S-Y0-5hj" secondAttribute="trailing" constant="20" id="Qxn-Hg-aac"/>
                             <constraint firstItem="GNT-eR-8G9" firstAttribute="leading" secondItem="ldv-FE-oTC" secondAttribute="leading" constant="40" id="WgS-Ql-Os9"/>
                             <constraint firstItem="nEd-7R-g5o" firstAttribute="top" secondItem="GNT-eR-8G9" secondAttribute="bottom" constant="40" id="cz7-r7-C0F"/>
@@ -112,7 +114,6 @@
         <!--Trainer-->
         <scene sceneID="HIy-Dv-mxU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z8b-FQ-o6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="acF-E1-Gz2" customClass="TrainerCourseTableViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FVU-RY-El8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -146,6 +147,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z8b-FQ-o6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2430" y="-668"/>
         </scene>
@@ -164,8 +166,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgC-qS-4wB">
-                                <rect key="frame" x="20" y="388" width="374" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <rect key="frame" x="20" y="388" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Create"/>
                                 <connections>
                                     <action selector="saveButton:" destination="7mP-4o-a7n" eventType="touchUpInside" id="poS-HY-EkG"/>
@@ -229,16 +231,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkV-gw-umy">
-                                <rect key="frame" x="178" y="302" width="58" height="30"/>
+                                <rect key="frame" x="167" y="299" width="81" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="check in"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Check-In"/>
                                 <connections>
                                     <action selector="checkinTapped:" destination="cKJ-Ss-jeR" eventType="touchUpInside" id="4um-n0-OPt"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="times remaining" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1LB-E6-Bah">
-                                <rect key="frame" x="50" y="188" width="314" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Times Remaining" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1LB-E6-Bah">
+                                <rect key="frame" x="50" y="188" width="314" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -295,7 +298,6 @@
         <!--Title-->
         <scene sceneID="IXh-iP-ze8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S60-db-I7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="vS6-aP-xQ5" customClass="ClientCourseTableViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8CJ-3o-Eyz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -324,6 +326,7 @@
                     <navigationItem key="navigationItem" title="Title" id="pkV-Cf-3dG"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S60-db-I7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1822" y="50"/>
         </scene>
@@ -419,8 +422,9 @@
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LME-Np-AYS">
-                                <rect key="frame" x="201" y="484" width="34" height="30"/>
+                                <rect key="frame" x="197" y="481" width="43" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="save:" destination="W1r-K1-JiO" eventType="touchUpInside" id="gZW-sf-ryz"/>
@@ -433,6 +437,7 @@
                     <connections>
                         <outlet property="courseLabel" destination="06E-4l-HH8" id="8ya-67-9xc"/>
                         <outlet property="datePicker" destination="UK5-GC-cNz" id="10T-P8-vg4"/>
+                        <outlet property="saveButton" destination="LME-Np-AYS" id="r0z-MO-hcF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sgm-h8-Dbj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -606,6 +611,7 @@
                         <viewLayoutGuide key="safeArea" id="jEt-fW-iL2"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="P8I-v4-qBm" id="0Gy-RV-uMD"/>
                         <outlet property="clientButtonOutlet" destination="eMC-Qm-kzt" id="vil-yg-2Hh"/>
                         <outlet property="firstNameTextField" destination="ksf-cw-Zpt" id="LcS-5X-Z8H"/>
                         <outlet property="lastNameTextField" destination="pbO-RC-a5O" id="M9D-VE-H1o"/>
@@ -657,9 +663,10 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kz7-RT-u0S">
-                                <rect key="frame" x="131" y="463" width="152" height="30"/>
+                                <rect key="frame" x="169" y="460" width="77" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Get pass for this class"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Get Pass"/>
                                 <connections>
                                     <action selector="getPassTapped:" destination="qSX-13-hIQ" eventType="touchUpInside" id="Ryw-2U-9o6"/>
                                 </connections>
@@ -706,7 +713,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1t-kg-6FH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1t-kg-6FH">
                                 <rect key="frame" x="183" y="564" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
@@ -716,6 +723,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="g1t-kg-6FH" firstAttribute="top" secondItem="X0c-2O-ynP" secondAttribute="bottom" constant="100" id="2vC-Tb-vsQ"/>
                             <constraint firstItem="RDw-O4-EhI" firstAttribute="top" secondItem="EA1-Cf-tZJ" secondAttribute="top" constant="280" id="L7M-s3-kl4"/>
                             <constraint firstItem="EA1-Cf-tZJ" firstAttribute="bottom" secondItem="g1t-kg-6FH" secondAttribute="bottom" constant="268" id="ORH-QK-3Zc"/>
                             <constraint firstItem="X0c-2O-ynP" firstAttribute="centerX" secondItem="8hd-QL-i5R" secondAttribute="centerX" id="UH0-ZB-Whd"/>
@@ -723,7 +731,6 @@
                             <constraint firstItem="g1t-kg-6FH" firstAttribute="leading" secondItem="EA1-Cf-tZJ" secondAttribute="leading" constant="183" id="eG5-8y-iQn"/>
                             <constraint firstItem="RDw-O4-EhI" firstAttribute="centerX" secondItem="X0c-2O-ynP" secondAttribute="centerX" id="g4C-N4-PdV"/>
                             <constraint firstItem="X0c-2O-ynP" firstAttribute="top" secondItem="RDw-O4-EhI" secondAttribute="bottom" constant="50" id="mjo-Rg-wXe"/>
-                            <constraint firstItem="RDw-O4-EhI" firstAttribute="centerX" secondItem="g1t-kg-6FH" secondAttribute="centerX" id="nF8-4E-vkc"/>
                             <constraint firstItem="EA1-Cf-tZJ" firstAttribute="trailing" secondItem="X0c-2O-ynP" secondAttribute="trailing" constant="30" id="pfT-uR-1Aw"/>
                             <constraint firstItem="X0c-2O-ynP" firstAttribute="leading" secondItem="EA1-Cf-tZJ" secondAttribute="leading" constant="30" id="q7H-K4-uWs"/>
                         </constraints>
@@ -761,6 +768,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="NS7-DC-YyX" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ilN-4d-Gag">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

@@ -29,6 +29,7 @@ class InitialViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.view.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
         if let userType = userType {
             if userType == .instructor {
                 performSegue(withIdentifier: "TrainerShowSegue", sender: self)

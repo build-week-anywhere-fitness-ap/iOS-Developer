@@ -36,7 +36,7 @@ class ClientSessionsTableViewController: UITableViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         courseController?.fetchSessionsFromServer(classId: course?.id ?? 0) {
             //done fetch
         }
