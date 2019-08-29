@@ -35,7 +35,7 @@ class TrainerCourseTableViewController: UITableViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.leftBarButtonItem = nil
+        navigationItem.setHidesBackButton(true, animated: false)
         
         courseController?.fetchCoursesFromServer {
             //done fetch
