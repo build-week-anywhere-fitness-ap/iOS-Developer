@@ -52,10 +52,10 @@ class LoginViewController: UIViewController {
                 return
             }
             DispatchQueue.main.async {
-                if courseController?.currentUser?.client == 1 {
+                if courseController?.currentUser?.client == true {
                     self.delegate?.setUserType(userType: .client)
                     self.dismiss(animated: true, completion: nil)
-                } else if courseController?.currentUser?.instructor == 1 {
+                } else if courseController?.currentUser?.instructor == true {
                     self.delegate?.setUserType(userType: .instructor)
                     self.dismiss(animated: true, completion: nil)
                 } else {

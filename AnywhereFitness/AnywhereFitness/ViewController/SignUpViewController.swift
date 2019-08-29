@@ -18,8 +18,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var trainerButtonOutlet: UIButton!
     @IBOutlet weak var signupButton: UIButton!
     
-    var clientNum: Int = 1
-    var trainerNum: Int = 0
+    var client = true
+    var trainer = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,15 +32,15 @@ class SignUpViewController: UIViewController {
     @IBAction func clientButton(_ sender: UIButton) {
         clientButtonOutlet.isSelected = true
         trainerButtonOutlet.isSelected = false
-        clientNum = 1
-        trainerNum = 0
+        client = true
+        trainer = false
         
     }
     @IBAction func trainerButton(_ sender: Any) {
         trainerButtonOutlet.isSelected = true
         clientButtonOutlet.isSelected = false
-        trainerNum = 1
-        clientNum = 0
+        trainer = true
+        client = false
     }
     
     
@@ -69,7 +69,7 @@ class SignUpViewController: UIViewController {
                 
         }
 
-        courseController?.signUp(firstName: firstName, lastName: lastName, username: userName, password: password, client: clientNum, instructor: trainerNum) { (error) in
+        courseController?.signUp(firstName: firstName, lastName: lastName, username: userName, password: password, client: client, instructor: trainer) { (error) in
             DispatchQueue.main.async {
                 if let error = error {
                     NSLog("Error signing up: \(error)")

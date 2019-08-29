@@ -1,27 +1,28 @@
 //
-//  TrainerCourseTableViewController.swift
+//  TrainerSessionsTableViewController.swift
 //  AnywhereFitness
 //
-//  Created by William Chen on 8/26/19.
+//  Created by Bradley Yin on 8/29/19.
 //  Copyright © 2019 bradleyyin. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class TrainerCourseTableViewController: UITableViewController {
+class TrainerSessionsTableViewController: UITableViewController {
     
-    lazy var fetchResultsController: NSFetchedResultsController<Course> = {
-        let fetchRequest: NSFetchRequest<Course> = Course.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "instructorId == %i", courseController?.currentUser?.id ?? 0)
+    var course: Course?
+
+    lazy var fetchResultsController: NSFetchedResultsController<Session> = {
+        let fetchRequest: NSFetchRequest<Session> = Session.fetchRequest()
         
-        let nameDescriptor = NSSortDescriptor(key: "name", ascending: false)
+        let dateDescriptor = NSSortDescriptor(key: "dateTime", ascending: false)
         
         // YOU MUST make the descriptor with the same key path as the sectionNameKeyPath be the first sort descriptor in this array
         
-        fetchRequest.sortDescriptors = [nameDescriptor]
+        fetchRequest.sortDescriptors = [dateDescriptor]
         
-        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.shared.mainContext, sectionNameKeyPath: "name", cacheName: nil)
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.shared.mainContext, sectionNameKeyPath: "dateTime", cacheName: nil)
         
         frc.delegate = self
         
@@ -35,9 +36,8 @@ class TrainerCourseTableViewController: UITableViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.leftBarButtonItem = nil
         
-        courseController?.fetchCoursesFromServer {
+        courseController?.fetchSessionsFromServer(classId: course?.id ?? 0) {
             //done fetch
         }
     }
@@ -45,20 +45,22 @@ class TrainerCourseTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         tableView.reloadData()
     }
-
+    
     // MARK: - Table view data source
-
-
-
+    
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return fetchResultsController.sections?.count ?? 0
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TrainerCourseCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TrainerSessionCell", for: indexPath)
         
-        let course = fetchResultsController.object(at: indexPath)
+        let session = fetchResultsController.object(at: indexPath)
         
-        cell.textLabel?.text = course.name
+        let dateFormatter = ISO8601DateFormatter()
+        
+        cell.textLabel?.text = dateFormatter.string(from: session.dateTime ?? Date())
         
         return cell
     }
@@ -68,13 +70,18 @@ class TrainerCourseTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TrainerSessionShowSegue" {
-            guard let trainerSessionsVC = segue.destination as? TrainerSessionsTableViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
-            let course = fetchResultsController.object(at: indexPath)
-            trainerSessionsVC.course = course
+            guard let trainerSessionDetailVC = segue.destination as? TrainerSessionDetailViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
+            trainerSessionDetailVC.session = fetchResultsController.object(at: indexPath)
+            trainerSessionDetailVC.course = course
+        }
+        if segue.identifier == "TrainerAddSessionSegue" {
+            guard let trainerSessionDetailVC = segue.destination as? TrainerSessionDetailViewController else { return }
+            trainerSessionDetailVC.course = course
         }
     }
 }
-extension TrainerCourseTableViewController: NSFetchedResultsControllerDelegate {
+
+extension TrainerSessionsTableViewController: NSFetchedResultsControllerDelegate {
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }

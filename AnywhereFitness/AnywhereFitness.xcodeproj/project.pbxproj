@@ -15,6 +15,11 @@
 		75B18BB52318250A00CC28EC /* Pass+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B18BB42318250A00CC28EC /* Pass+Convenience.swift */; };
 		75B18BB72318261500CC28EC /* PassRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B18BB62318261500CC28EC /* PassRepresentation.swift */; };
 		75B18BB923182C9A00CC28EC /* PassesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B18BB823182C9A00CC28EC /* PassesTableViewController.swift */; };
+		75B18BBB231831FD00CC28EC /* SessionRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B18BBA231831FD00CC28EC /* SessionRepresentation.swift */; };
+		75B18BBD2318326B00CC28EC /* Session+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B18BBC2318326B00CC28EC /* Session+Convenience.swift */; };
+		75B18BBF2318376500CC28EC /* TrainerSessionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B18BBE2318376500CC28EC /* TrainerSessionDetailViewController.swift */; };
+		75B18BC12318383500CC28EC /* TrainerSessionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B18BC02318383500CC28EC /* TrainerSessionsTableViewController.swift */; };
+		75B18BC32318415700CC28EC /* ClientSessionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B18BC22318415700CC28EC /* ClientSessionTableViewController.swift */; };
 		75BC6F0E2314500C00C64D42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BC6F0D2314500C00C64D42 /* AppDelegate.swift */; };
 		75BC6F132314500C00C64D42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75BC6F112314500C00C64D42 /* Main.storyboard */; };
 		75BC6F152314500D00C64D42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75BC6F142314500D00C64D42 /* Assets.xcassets */; };
@@ -43,6 +48,11 @@
 		75B18BB42318250A00CC28EC /* Pass+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pass+Convenience.swift"; sourceTree = "<group>"; };
 		75B18BB62318261500CC28EC /* PassRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassRepresentation.swift; sourceTree = "<group>"; };
 		75B18BB823182C9A00CC28EC /* PassesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassesTableViewController.swift; sourceTree = "<group>"; };
+		75B18BBA231831FD00CC28EC /* SessionRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRepresentation.swift; sourceTree = "<group>"; };
+		75B18BBC2318326B00CC28EC /* Session+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+Convenience.swift"; sourceTree = "<group>"; };
+		75B18BBE2318376500CC28EC /* TrainerSessionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerSessionDetailViewController.swift; sourceTree = "<group>"; };
+		75B18BC02318383500CC28EC /* TrainerSessionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerSessionsTableViewController.swift; sourceTree = "<group>"; };
+		75B18BC22318415700CC28EC /* ClientSessionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientSessionTableViewController.swift; sourceTree = "<group>"; };
 		75BC6F0A2314500C00C64D42 /* AnywhereFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnywhereFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BC6F0D2314500C00C64D42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75BC6F122314500C00C64D42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,6 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				75B18BA72316EA9500CC28EC /* AnywhereFitnessModel.xcdatamodeld */,
+				75B18BBC2318326B00CC28EC /* Session+Convenience.swift */,
+				75B18BBA231831FD00CC28EC /* SessionRepresentation.swift */,
 				75B18BB62318261500CC28EC /* PassRepresentation.swift */,
 				75B18BB42318250A00CC28EC /* Pass+Convenience.swift */,
 				75C509A52315E75C001C0D5B /* UserLogin.swift */,
@@ -147,6 +159,8 @@
 			children = (
 				9E9505B8231497E800256BA3 /* TrainerCourseTableViewController.swift */,
 				842131582314C9EF008F384E /* CreateCourseViewController.swift */,
+				75B18BBE2318376500CC28EC /* TrainerSessionDetailViewController.swift */,
+				75B18BC02318383500CC28EC /* TrainerSessionsTableViewController.swift */,
 			);
 			path = TrainerViewControllers;
 			sourceTree = "<group>";
@@ -160,6 +174,7 @@
 				9E9505B0231493A100256BA3 /* ClientForgotPasswordViewController.swift */,
 				9E65BCF22317389A00F04711 /* FreePassViewController.swift */,
 				75B18BB823182C9A00CC28EC /* PassesTableViewController.swift */,
+				75B18BC22318415700CC28EC /* ClientSessionTableViewController.swift */,
 			);
 			path = ClientViewControllers;
 			sourceTree = "<group>";
@@ -236,11 +251,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				75B18BB72318261500CC28EC /* PassRepresentation.swift in Sources */,
+				75B18BC32318415700CC28EC /* ClientSessionTableViewController.swift in Sources */,
 				9E9505AB231492ED00256BA3 /* ForgotPasswordViewController.swift in Sources */,
 				75B18BB52318250A00CC28EC /* Pass+Convenience.swift in Sources */,
 				9E9505B3231493E300256BA3 /* ClientCourseTableViewController.swift in Sources */,
 				75C509A62315E75C001C0D5B /* UserLogin.swift in Sources */,
 				75B18BAF2317065A00CC28EC /* Course+Convenience.swift in Sources */,
+				75B18BBB231831FD00CC28EC /* SessionRepresentation.swift in Sources */,
 				9E9505B72314975D00256BA3 /* SignUpViewController.swift in Sources */,
 				9E9505B52314967C00256BA3 /* LoginViewController.swift in Sources */,
 				75B18BAB2316EAF000CC28EC /* CoreDataStacks.swift in Sources */,
@@ -250,8 +267,11 @@
 				75C509A42315D5A5001C0D5B /* CourseController.swift in Sources */,
 				75B18BB3231793B400CC28EC /* InitialViewController.swift in Sources */,
 				842131552314C96B008F384E /* BuyClassPassViewController.swift in Sources */,
+				75B18BBD2318326B00CC28EC /* Session+Convenience.swift in Sources */,
 				9E9505B1231493A100256BA3 /* ClientForgotPasswordViewController.swift in Sources */,
 				75B18BB923182C9A00CC28EC /* PassesTableViewController.swift in Sources */,
+				75B18BBF2318376500CC28EC /* TrainerSessionDetailViewController.swift in Sources */,
+				75B18BC12318383500CC28EC /* TrainerSessionsTableViewController.swift in Sources */,
 				75B18BB12317074800CC28EC /* CourseRepresentation.swift in Sources */,
 				75BC6F0E2314500C00C64D42 /* AppDelegate.swift in Sources */,
 				842131592314C9EF008F384E /* CreateCourseViewController.swift in Sources */,

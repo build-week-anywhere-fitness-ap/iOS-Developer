@@ -14,8 +14,8 @@ struct User: Codable {
     var lastName: String?
     let username: String?
     var password: String?
-    let client: Int?
-    let instructor: Int?
+    let client: Bool?
+    let instructor: Bool?
     let token: String?
 }
 

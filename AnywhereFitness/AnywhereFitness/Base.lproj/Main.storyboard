@@ -336,13 +336,13 @@
         <!--Title-->
         <scene sceneID="B8Q-V7-BC0">
             <objects>
-                <tableViewController id="ose-98-G1Q" sceneMemberID="viewController">
+                <tableViewController id="ose-98-G1Q" customClass="TrainerSessionsTableViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2r2-cp-bCZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="JW1-Ls-4Wf">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrainerSessionCell" id="JW1-Ls-4Wf">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JW1-Ls-4Wf" id="CEE-Nc-Ye3">
@@ -371,20 +371,48 @@
             </objects>
             <point key="canvasLocation" x="2717" y="128"/>
         </scene>
-        <!--View Controller-->
+        <!--Trainer Session Detail View Controller-->
         <scene sceneID="HFH-fA-bk3">
             <objects>
-                <viewController id="W1r-K1-JiO" sceneMemberID="viewController">
+                <viewController id="W1r-K1-JiO" customClass="TrainerSessionDetailViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jU1-Te-67K">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06E-4l-HH8">
+                                <rect key="frame" x="97" y="130" width="242" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="UK5-GC-cNz">
+                                <rect key="frame" x="0.0" y="230" width="414" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="588789768.805776">
+                                    <!--2019-08-29 16:42:48 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LME-Np-AYS">
+                                <rect key="frame" x="201" y="484" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="W1r-K1-JiO" eventType="touchUpInside" id="gZW-sf-ryz"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Xr8-zZ-MLm"/>
                     </view>
+                    <connections>
+                        <outlet property="courseLabel" destination="06E-4l-HH8" id="8ya-67-9xc"/>
+                        <outlet property="datePicker" destination="UK5-GC-cNz" id="10T-P8-vg4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sgm-h8-Dbj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3613" y="128"/>
+            <point key="canvasLocation" x="3611.594202898551" y="127.90178571428571"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="v2b-bo-Gzs">
@@ -713,6 +741,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tQ4-rk-00W"/>
+        <segue reference="39S-2w-Qgr"/>
     </inferredMetricsTieBreakers>
 </document>
