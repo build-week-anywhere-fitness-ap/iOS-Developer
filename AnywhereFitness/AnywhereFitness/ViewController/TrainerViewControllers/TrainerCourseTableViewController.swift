@@ -13,7 +13,7 @@ class TrainerCourseTableViewController: UITableViewController {
     
     lazy var fetchResultsController: NSFetchedResultsController<Course> = {
         let fetchRequest: NSFetchRequest<Course> = Course.fetchRequest()
-        //fetchRequest.predicate = NSPredicate(format: "instructorId == %@", courseController?.currentUser?.id ?? 0)
+        fetchRequest.predicate = NSPredicate(format: "instructorId == %i", courseController?.currentUser?.id ?? 0)
         
         let nameDescriptor = NSSortDescriptor(key: "name", ascending: false)
         
