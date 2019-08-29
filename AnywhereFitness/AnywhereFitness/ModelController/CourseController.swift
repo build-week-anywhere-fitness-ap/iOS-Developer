@@ -10,9 +10,9 @@ import Foundation
 import CoreData
 
 class CourseController {
-    let baseURL = URL(string: "https://bw-anywhere-fitness.herokuapp.com/")!
+    private let baseURL = URL(string: "https://bw-anywhere-fitness.herokuapp.com/")!
     
-    var userLocalURL: URL?{
+    private var userLocalURL: URL?{
         let fm = FileManager.default
         guard let dir = fm.urls(for: .documentDirectory, in: .userDomainMask).first else {return nil}
         print(dir.path)
@@ -20,17 +20,6 @@ class CourseController {
     }
     
     var currentUser: User?
-    
-    //var courses: [Course] = []
-    
-    //for testing
-    let userName = "bradTestInstructor"
-    let password = "123456"
-    
-    init() {
-    }
-    
-    
 }
 
 extension CourseController {
@@ -122,7 +111,7 @@ extension CourseController {
         }.resume()
     }
     
-    func saveLocalUser() {
+    private func saveLocalUser() {
         guard let url = self.userLocalURL else{ return }
         
         do{
@@ -195,7 +184,7 @@ extension CourseController {
             })
         }
     }
-    func deleteLocalCourseAfterCreate (course: Course, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    private func deleteLocalCourseAfterCreate (course: Course, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         context.performAndWait {
             context.delete(course)
             do{
@@ -206,6 +195,7 @@ extension CourseController {
             fetchCoursesFromServer()
         }
     }
+ 
 }
 extension CourseController {
     //MARK:- CRUD for pass
@@ -226,7 +216,7 @@ extension CourseController {
             })
         }
     }
-    func deleteLocalPassAfterCreate (pass: Pass, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    private func deleteLocalPassAfterCreate (pass: Pass, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         context.performAndWait {
             context.delete(pass)
             do{
@@ -270,7 +260,7 @@ extension CourseController {
             })
         }
     }
-    func deleteLocalSessionAfterCreate (session: Session, classId: Int64, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+   private func deleteLocalSessionAfterCreate (session: Session, classId: Int64, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         context.performAndWait {
             context.delete(session)
             do{
@@ -291,6 +281,19 @@ extension CourseController {
                 context.reset()
             }
             update(session: session)
+        }
+    }
+    
+    // Delete
+    func deleteSession (session: Session, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        deleteFromServer(session: session)
+        context.performAndWait {
+            context.delete(session)
+            do{
+                try CoreDataStack.shared.save(context: context)
+            } catch {
+                NSLog("Error saving context when deleting session: \(error)")
+            }
         }
     }
 }
@@ -328,7 +331,7 @@ extension CourseController {
         }.resume()
     }
     
-    func updatePersistentStore(with courseRepresentations: [CourseRepresentation], context: NSManagedObjectContext) {
+    private func updatePersistentStore(with courseRepresentations: [CourseRepresentation], context: NSManagedObjectContext) {
         context.performAndWait {
             for courseRepresentation in courseRepresentations {
                 //see if a task with the same identifier exist in core data
@@ -352,9 +355,7 @@ extension CourseController {
             }
         }
     }
-    func course(for id: Int64, context: NSManagedObjectContext) -> Course? {
-        
-        
+    private func course(for id: Int64, context: NSManagedObjectContext) -> Course? {
         let predicate = NSPredicate(format: "id == %i", id as Int64)
         
         let fetchRequest: NSFetchRequest<Course> = Course.fetchRequest()
@@ -400,7 +401,7 @@ extension CourseController {
             }.resume()
     }
     
-    func updatePersistentStore(with passRepresentations: [PassRepresentation], context: NSManagedObjectContext) {
+    private func updatePersistentStore(with passRepresentations: [PassRepresentation], context: NSManagedObjectContext) {
         context.performAndWait {
             for passRepresentation in passRepresentations {
                 //see if a task with the same identifier exist in core data
@@ -423,9 +424,7 @@ extension CourseController {
             }
         }
     }
-    func pass(for id: Int64, context: NSManagedObjectContext) -> Pass? {
-        
-        
+    private func pass(for id: Int64, context: NSManagedObjectContext) -> Pass? {
         let predicate = NSPredicate(format: "id == %i", id as Int64)
         
         let fetchRequest: NSFetchRequest<Pass> = Pass.fetchRequest()
@@ -474,11 +473,12 @@ extension CourseController {
         }.resume()
     }
     
-    func updatePersistentStore(with sessionRepresentations: [SessionRepresentation], context: NSManagedObjectContext) {
+    private func updatePersistentStore(with sessionRepresentations: [SessionRepresentation], context: NSManagedObjectContext) {
         context.performAndWait {
             for sessionRepresentation in sessionRepresentations {
                 //see if a task with the same identifier exist in core data
                 guard let id = sessionRepresentation.id else { continue }
+                print(id)
                 // update it if one does exist, or create a Task if it doesn't
                 if let session = session(for: id, context: context) {
                     //task exist in core data, update it
@@ -496,9 +496,7 @@ extension CourseController {
             }
         }
     }
-    func session(for id: Int64, context: NSManagedObjectContext) -> Session? {
-        
-        
+    private func session(for id: Int64, context: NSManagedObjectContext) -> Session? {
         let predicate = NSPredicate(format: "id == %i", id as Int64)
         
         let fetchRequest: NSFetchRequest<Session> = Session.fetchRequest()
@@ -513,7 +511,7 @@ extension CourseController {
         return session
     }
     
-    func post(course: Course, completion: @escaping () -> Void = {}) {
+    private func post(course: Course, completion: @escaping () -> Void = {}) {
         guard let token = currentUser?.token else { return }
         let requestURL = baseURL.appendingPathComponent("api/classes")
         var request = URLRequest(url: requestURL)
@@ -556,7 +554,7 @@ extension CourseController {
         }.resume()
     }
     
-    func post(pass: Pass, completion: @escaping () -> Void = {}) {
+    private func post(pass: Pass, completion: @escaping () -> Void = {}) {
         guard let token = currentUser?.token else { return }
         let requestURL = baseURL.appendingPathComponent("api/passes")
         var request = URLRequest(url: requestURL)
@@ -597,7 +595,7 @@ extension CourseController {
             }.resume()
     }
     
-    func update(pass: Pass, completion: @escaping () -> Void = {}) {
+    private func update(pass: Pass, completion: @escaping () -> Void = {}) {
         guard let token = currentUser?.token else { return }
         let passId = pass.id
         let requestURL = baseURL.appendingPathComponent("api/passes/\(passId)")
@@ -621,25 +619,11 @@ extension CourseController {
             if let error = error {
                 NSLog("Error PUTing pass representation update to server: \(error)")
             }
-//            guard let data = data else {
-//                NSLog("no data")
-//                return
-//            }
-//            do {
-//                let passIdArray = try JSONDecoder().decode([Int].self, from: data)
-//                print(passIdArray)
-//                if let passId = passIdArray.first {
-//                    print(passId)
-//                }
-//            } catch {
-//                NSLog("Error decoding when PUTing to server: \(error)")
-//                return
-//            }
             completion()
-            }.resume()
+        }.resume()
     }
     
-    func post(session: Session, completion: @escaping () -> Void = {}) {
+    private func post(session: Session, completion: @escaping () -> Void = {}) {
         guard let token = currentUser?.token else { return }
         let requestURL = baseURL.appendingPathComponent("api/sessions")
         var request = URLRequest(url: requestURL)
@@ -684,7 +668,7 @@ extension CourseController {
         }.resume()
     }
     
-    func update(session: Session, completion: @escaping () -> Void = {}) {
+   private func update(session: Session, completion: @escaping () -> Void = {}) {
         guard let token = currentUser?.token else { return }
         let sessionId = session.id
         let requestURL = baseURL.appendingPathComponent("api/sessions/\(sessionId)")
@@ -715,24 +699,23 @@ extension CourseController {
         }.resume()
     }
     
-    
-    
-//    func deleteFromServer(course: Course, completion: (() -> Void)? = nil) {
-//        guard let identifier = task.identifier else {
-//            completion?()
-//            return
-//        }
-//        let requestURL = baseURL.appendingPathComponent(identifier.uuidString).appendingPathExtension("json")
-//        var request = URLRequest(url: requestURL)
-//        request.httpMethod = "DELETE"
-//
-//        URLSession.shared.dataTask(with: request) { (_, _, error) in
-//            if let error = error {
-//                NSLog("Error DELETEing task representation to server: \(error)")
-//            }
-//            completion?()
-//            }.resume()
-//    }
+    private func deleteFromServer(session: Session, completion: @escaping () -> Void = {}) {
+        guard let token = currentUser?.token else { return }
+        let sessionId = session.id
+        print(sessionId)
+        let requestURL = baseURL.appendingPathComponent("api/sessions/\(sessionId)")
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.delete.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(token, forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(with: request) { (_, _, error) in
+            if let error = error {
+                NSLog("Error DELETEing task representation to server: \(error)")
+            }
+            completion()
+        }.resume()
+    }
 }
 
 

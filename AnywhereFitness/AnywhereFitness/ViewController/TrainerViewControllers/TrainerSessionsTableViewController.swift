@@ -16,6 +16,8 @@ class TrainerSessionsTableViewController: UITableViewController {
     lazy var fetchResultsController: NSFetchedResultsController<Session> = {
         let fetchRequest: NSFetchRequest<Session> = Session.fetchRequest()
         
+        fetchRequest.predicate = NSPredicate(format: "classId == %i", course!.id)
+        
         let dateDescriptor = NSSortDescriptor(key: "dateTime", ascending: false)
         
         // YOU MUST make the descriptor with the same key path as the sectionNameKeyPath be the first sort descriptor in this array
@@ -77,6 +79,13 @@ class TrainerSessionsTableViewController: UITableViewController {
         if segue.identifier == "TrainerAddSessionSegue" {
             guard let trainerSessionDetailVC = segue.destination as? TrainerSessionDetailViewController else { return }
             trainerSessionDetailVC.course = course
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let session = fetchResultsController.object(at: indexPath)
+            courseController?.deleteSession(session: session)
         }
     }
 }
