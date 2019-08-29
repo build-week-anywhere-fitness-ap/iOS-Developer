@@ -82,8 +82,8 @@
                                     <segue destination="PHG-T4-zPs" kind="presentation" identifier="AddNewTrainerModalSegue" id="Wtn-Gm-d7q"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="anywherefitness" translatesAutoresizingMaskIntoConstraints="NO" id="xxy-1K-Aq0">
-                                <rect key="frame" x="87" y="233" width="240" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="af-logo-square150" translatesAutoresizingMaskIntoConstraints="NO" id="xxy-1K-Aq0">
+                                <rect key="frame" x="132" y="264" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -789,7 +789,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="anywherefitness" width="288" height="119"/>
+        <image name="af-logo-square150" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="tQ4-rk-00W"/>
