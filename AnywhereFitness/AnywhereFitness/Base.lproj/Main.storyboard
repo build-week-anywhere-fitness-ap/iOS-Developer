@@ -131,6 +131,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.68156575959999999" blue="0.14732135369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="ose-98-G1Q" kind="show" identifier="TrainerSessionShowSegue" id="bg1-eE-PeI"/>
                                 </connections>
@@ -283,6 +284,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.68156575959999999" blue="0.14732135369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="cKJ-Ss-jeR" kind="show" identifier="PassDetailShowSegue" id="xxU-cG-bBe"/>
                                 </connections>
@@ -349,6 +351,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.68156575959999999" blue="0.14732135369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="qSX-13-hIQ" kind="show" identifier="ClientSessionDetailShowSegue" id="wL2-U6-p3F"/>
                                 </connections>
