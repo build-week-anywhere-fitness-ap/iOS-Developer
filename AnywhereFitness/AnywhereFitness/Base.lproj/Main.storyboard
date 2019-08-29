@@ -49,7 +49,7 @@
                                 <rect key="frame" x="40" y="537" width="334" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nEd-7R-g5o">
                                 <rect key="frame" x="125" y="607" width="164" height="68"/>
@@ -295,7 +295,7 @@
             </objects>
             <point key="canvasLocation" x="672" y="50"/>
         </scene>
-        <!--Title-->
+        <!--Courses-->
         <scene sceneID="IXh-iP-ze8">
             <objects>
                 <tableViewController id="vS6-aP-xQ5" customClass="ClientCourseTableViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
@@ -323,7 +323,6 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Courses" id="9Wl-hh-erd"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="pkV-Cf-3dG"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S60-db-I7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -522,7 +521,7 @@
                                         <rect key="frame" x="0.0" y="257" width="374" height="29"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
