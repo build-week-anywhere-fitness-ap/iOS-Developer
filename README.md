@@ -1,6 +1,21 @@
 # AnyWhereFitness
+<p float="left">
+  <img src="/LoginScreen.png" width="200" />
+  <img src="/SignUpScreen.png" width="200" /> 
+  <img src="/ClassesScreen.png" width="200" />
+  <img src="/PassScreen.png" width="200" />
+</p>
+
 
 AnyWhereFitness is an app to help people workout anywhere. Trainers can post their class schedules and issue passes for the clients. Clients can view the classes and buy passes to attend the class. Passes can then be redeemed and deduct during the class.
+<!-- wp:paragraph -->
+<p>Language: Swift (For the iOS end)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Apple Framework: UIKit, CoreData, Networking</p>
+<!-- /wp:paragraph -->
+
 
 ## Contributors
 
